@@ -1,7 +1,7 @@
 from stock_data import *
 
 tickers = ['QQQ', 'EEM', 'EFA', 'AGG', 'TIP', 'PDBC', 'BIL', 'IEF', 'TLT', 'LQD', 'BND', 'SPY', 'VEA', 'VWO']
-sdpath = 'E:/Dropbox/박정훈 개인문서/0_finance/stock_data.csv'
+sdpath = './stock_data.csv'
 data = stock_data_download(tickers, sdpath)
 
 def select_assets(momentum_scores, price_ratios):
