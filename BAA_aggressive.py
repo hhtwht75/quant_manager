@@ -32,5 +32,5 @@ price_ratios = calculate_price_ratio(data, moving_average)
 # 자산 선택
 selected_assets = select_assets(momentum_scores, price_ratios)
 
-print(moving_average)
+#print(moving_average)
 print(selected_assets)
