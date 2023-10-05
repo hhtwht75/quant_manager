@@ -22,7 +22,7 @@ max_losses = []
 for _ in range(iterations):
     # 랜덤한 시작 날짜와 랜덤한 구간 길이 선택
     # random_length = random.randint(30, 200)
-    random_length = 60
+    random_length = 30
     random_start_index = random.randint(0, len(full_long_data) - random_length - 1)
     random_end_index = random_start_index + random_length
 
@@ -43,13 +43,13 @@ for _ in range(iterations):
             cash -= purchased_shares * purchase_price_long * (1 + transaction_fee_rate)
             cash += purchased_shares * long.loc[date, 'Close'] * (1 - transaction_fee_rate)
 
-        # short position에 대한 로직
-        purchase_price_short = short.loc[date, 'Open'] * (1 + gain_threshold)
-        if short.loc[date, 'High'] >= purchase_price_short:
-            buy_amount = (0.5 * cash) / (1 + transaction_fee_rate)
-            purchased_shares = buy_amount // purchase_price_short
-            cash -= purchased_shares * purchase_price_short * (1 + transaction_fee_rate)
-            cash += purchased_shares * short.loc[date, 'Close'] * (1 - transaction_fee_rate)
+        # # short position에 대한 로직
+        # purchase_price_short = short.loc[date, 'Open'] * (1 + gain_threshold)
+        # if short.loc[date, 'High'] >= purchase_price_short:
+        #     buy_amount = (0.5 * cash) / (1 + transaction_fee_rate)
+        #     purchased_shares = buy_amount // purchase_price_short
+        #     cash -= purchased_shares * purchase_price_short * (1 + transaction_fee_rate)
+        #     cash += purchased_shares * short.loc[date, 'Close'] * (1 - transaction_fee_rate)
 
     # 각 랜덤 데이터 구간의 마지막 날짜에서 수익률과 최대 손실 계산
     profits.append((cash - portfolio_value) / portfolio_value)
