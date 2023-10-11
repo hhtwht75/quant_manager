@@ -11,14 +11,16 @@ def fetch_stock_data(tickers, interval="15m", period="60d"):
             print(f"Error fetching data for {ticker}: {e}")
     return df
 
-tickers = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "TSLA", "META"]
+# tickers = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "TSLA", "META"]
+tickers = ["TSLA", "TSLS"]
+
 stock_data = fetch_stock_data(tickers)
 
 
 def backtest_strategy(stock_data, initial_capital=100000):
     capital = initial_capital
     holdings = 0  # 보유 주식 수
-    commission_rate = 0.002  # 거래 수수료 0.2%
+    commission_rate = 0.001  # 거래 수수료 0.2%
     closing_time = stock_data[tickers[0]].index[-1].time()
 
     for date in stock_data[tickers[0]].index:
@@ -51,7 +53,7 @@ def backtest_strategy(stock_data, initial_capital=100000):
     profit_or_loss = capital - initial_capital
     return capital, profit_or_loss
 
-initial_capital = 10000
+initial_capital = 100000
 
 final_capital, profit_or_loss = backtest_strategy(stock_data, initial_capital)
 print(f"Initial Capital: ${initial_capital:.2f}")
