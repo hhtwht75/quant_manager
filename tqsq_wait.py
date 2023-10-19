@@ -4,8 +4,8 @@ import random
 import numpy as np  # 표준편차 계산을 위한 라이브러리
 
 # 데이터 다운로드
-start_date = '2022-10-01'
-end_date = '2023-09-01'
+start_date = '2023-01-01'
+end_date = '2023-11-01'
 long_ticker = 'TSLA'
 short_ticker = 'TSLS'
 full_long_data = yf.download(long_ticker, start=start_date, end=end_date)
@@ -13,23 +13,24 @@ full_short_data = yf.download(short_ticker, start=start_date, end=end_date)
 
 # 초기 설정
 gain_threshold = 0.01  # 상승
-transaction_fee_rate = 0.0  # 수수료
+transaction_fee_rate = 0.0000  # 수수료
+cash = portfolio_value = 100000
 iterations = 100
 
 profits = []
 max_losses = []
 
 for _ in range(iterations):
-    # 랜덤한 시작 날짜와 랜덤한 구간 길이 선택
+# for i in range(0,1):
     random_length = 30
     # random_length = random.randint(30, 100)
-
     random_start_index = random.randint(0, len(full_long_data) - random_length - 1)
     random_end_index = random_start_index + random_length
-
-    # 랜덤한 데이터 구간 추출
     long = full_long_data.iloc[random_start_index:random_end_index]
     short = full_short_data.iloc[random_start_index:random_end_index]
+
+    # long = full_long_data
+    # short = full_short_data
 
     # 초기 포트폴리오 가치
     cash = portfolio_value = 100000  
@@ -69,3 +70,4 @@ print(f"Average Profit: {average_profit*100:.2f}%")
 print(f"Standard Deviation of Profit: {std_dev_profit*100:.2f}%")
 print(f"Minimum Profit: {min_profit*100:.2f}%")
 print(f"Maximum Profit: {max_profit*100:.2f}%")
+# print(cash)
