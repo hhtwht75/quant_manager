@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 
-def fetch_stock_data(tickers, interval="15m", period="30d"):
+def fetch_stock_data(tickers, interval="5m", period="10d"):
     df = {}
     for ticker in tickers:
         try:
@@ -12,7 +12,9 @@ def fetch_stock_data(tickers, interval="15m", period="30d"):
     return df
 
 # tickers = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "TSLA", "META"]
-tickers = ["TSLA", "TSLQ"]
+tickers = ["TQQQ", "SQQQ"]
+# tickers = ["TSLA", "TSLQ"]
+
 
 stock_data = fetch_stock_data(tickers)
 
@@ -20,7 +22,7 @@ def backtest_strategy(stock_data, initial_capital=100000):
     capital = initial_capital
     previous_capital = initial_capital  # Capital after the previous sell
     holdings = 0  # Number of stocks held
-    commission_rate = 0.000  # Commission rate
+    commission_rate = 0.002  # Commission rate
     closing_time = stock_data[tickers[0]].index[-1].time()
     bought_today = False  # Flag to check if a stock was bought on the current date
 
