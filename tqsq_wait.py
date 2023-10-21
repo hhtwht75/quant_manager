@@ -4,8 +4,8 @@ import random
 import numpy as np  # 표준편차 계산을 위한 라이브러리
 
 # 데이터 다운로드
-start_date = '2023-01-01'
-end_date = '2023-11-01'
+start_date = '2023-10-01'
+end_date = '2023-10-18'
 long_ticker = 'TSLA'
 short_ticker = 'TSLS'
 full_long_data = yf.download(long_ticker, start=start_date, end=end_date)
@@ -20,17 +20,17 @@ iterations = 100
 profits = []
 max_losses = []
 
-for _ in range(iterations):
-# for i in range(0,1):
-    random_length = 30
+# for _ in range(iterations):
+for i in range(0,1):
+    # random_length = 30
     # random_length = random.randint(30, 100)
-    random_start_index = random.randint(0, len(full_long_data) - random_length - 1)
-    random_end_index = random_start_index + random_length
-    long = full_long_data.iloc[random_start_index:random_end_index]
-    short = full_short_data.iloc[random_start_index:random_end_index]
+    # random_start_index = random.randint(0, len(full_long_data) - random_length - 1)
+    # random_end_index = random_start_index + random_length
+    # long = full_long_data.iloc[random_start_index:random_end_index]
+    # short = full_short_data.iloc[random_start_index:random_end_index]
 
-    # long = full_long_data
-    # short = full_short_data
+    long = full_long_data
+    short = full_short_data
 
     # 초기 포트폴리오 가치
     cash = portfolio_value = 100000  
@@ -65,9 +65,9 @@ min_profit = np.min(profits)
 max_profit = np.max(profits)
 
 
-print(f"Profit > 0 ratio: {positive_profit_ratio*100:.2f}%")
+# print(f"Profit > 0 ratio: {positive_profit_ratio*100:.2f}%")
 print(f"Average Profit: {average_profit*100:.2f}%")
-print(f"Standard Deviation of Profit: {std_dev_profit*100:.2f}%")
-print(f"Minimum Profit: {min_profit*100:.2f}%")
-print(f"Maximum Profit: {max_profit*100:.2f}%")
-# print(cash)
+# print(f"Standard Deviation of Profit: {std_dev_profit*100:.2f}%")
+# print(f"Minimum Profit: {min_profit*100:.2f}%")
+# print(f"Maximum Profit: {max_profit*100:.2f}%")
+print(cash)
