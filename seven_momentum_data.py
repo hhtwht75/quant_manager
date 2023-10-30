@@ -84,17 +84,19 @@ whole_tickers = ["TQQQ", "SQQQ", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS",
 
 average_rate = []
 
-for i in range(0, len(whole_tickers) // 2):
+# for i in range(0, len(whole_tickers) // 2):
+for i in range(0,1):
     
-    interval = "1h"
+    interval = "15m"
     # period = "20d"
-    start_date = "2023-08-01"
-    end_date = "2023-09-01"
+    start_date = "2023-10-01"
+    end_date = "2023-10-30"
     initial_capital = 10000
-    stop_loss = 0.01
-    commission_rate = 0.000
+    stop_loss = 0.010
+    commission_rate = 0.001
 
-    tickers = whole_tickers[i*2 : i*2 + 2]
+    tickers = whole_tickers
+    # tickers = whole_tickers[i*2 : i*2 + 2]
     stock_data = fetch_stock_data(tickers, interval, start_date, end_date)
 
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, stop_loss, commission_rate)
