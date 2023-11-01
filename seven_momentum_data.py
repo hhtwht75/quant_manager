@@ -78,7 +78,8 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, stop_loss=0.0
     return accumulated_return
 
 # whole_tickers = ["TQQQ", "SQQQ", "TMV", "TMf", "TYO", "TYD", "YANG", "YINN", "EDZ", "EDC", "TZA", "TNA", "WEBL", "WEBS", "FAZ", "FAS", "DRV", "DRN", "HIBS", "HIBL", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS"]
-whole_tickers = ["TQQQ", "SQQQ", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS", "FNGU", "FNGD"]
+# whole_tickers = ["TQQQ", "SQQQ", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS", "FNGU", "FNGD"]
+whole_tickers = ["LABD", "LABU", "SOXL", "SOXS"]
 # whole_tickers = ["TYD", "TYO"]
 
 
@@ -89,8 +90,8 @@ for i in range(0,1):
     
     interval = "15m"
     # period = "20d"
-    start_date = "2023-10-01"
-    end_date = "2023-10-30"
+    start_date = "2023-09-02"
+    end_date = "2023-11-01"
     initial_capital = 10000
     stop_loss = 0.010
     commission_rate = 0.001
