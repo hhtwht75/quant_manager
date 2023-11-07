@@ -38,10 +38,10 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, stop_loss=0.0
                 holdings = 0
                 accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                 change_rate = ((capital - previous_capital) / previous_capital) * 100
-                # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 1.5% loss rule on {date}")
-                # print(f"Change rate since last sale: {change_rate:.2f}%")
-                # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
-                # print(f"     ")
+                print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 1.5% loss rule on {date}")
+                print(f"Change rate since last sale: {change_rate:.2f}%")
+                print(f"Accumulated return after sale: {accumulated_return:.2f}%")
+                print(f"     ")
                 previous_capital = capital
 
             elif date.time() == closing_time:
@@ -50,10 +50,10 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, stop_loss=0.0
                 holdings = 0
                 accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                 change_rate = ((capital - previous_capital) / previous_capital) * 100
-                # print(f"Sold {bought_ticker} at ${sell_price:.2f} at end of day on {date}")
-                # print(f"Change rate since last sale: {change_rate:.2f}%")
-                # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
-                # print(f"     ")
+                print(f"Sold {bought_ticker} at ${sell_price:.2f} at end of day on {date}")
+                print(f"Change rate since last sale: {change_rate:.2f}%")
+                print(f"Accumulated return after sale: {accumulated_return:.2f}%")
+                print(f"     ")
 
                 previous_capital = capital
 
@@ -89,10 +89,10 @@ average_rate = []
 # for i in range(0, len(whole_tickers) // 2):
 for i in range(0,1):
     
-    interval = "15m"
+    interval = "5m"
     # period = "20d"
-    start_date = "2023-10-10"
-    end_date = "2023-11-03"
+    start_date = "2023-11-01"
+    end_date = "2023-11-07"
     initial_capital = 10000
     stop_loss = 0.010
     commission_rate = 0.001
