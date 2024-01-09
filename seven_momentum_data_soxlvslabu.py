@@ -64,22 +64,10 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     capital += (holdings * sell_price) * (1 - commission_rate)
                     accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                     change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to STOP LOSS rule on {date}")
-                    # print(f"Change rate since last sale: {change_rate:.2f}%")
+                    print(f"Sold {bought_ticker} at ${sell_price:.2f} due to STOP LOSS rule on {date}")
+                    print(f"Change rate since last sale: {change_rate:.2f}%")
                     # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                     # print(f"     ")
-                    previous_capital = capital
-                    holdings = 0
-                elif stock_data[bought_ticker].loc[date, "Low"] <= buy_price * 0.97:
-                    sell_price = buy_price * 0.97
-                    capital += (holdings * sell_price) * (1 - commission_rate)
-                    accumulated_return = ((capital - initial_capital) / initial_capital) * 100
-                    change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 3% STOP LOSS rule on {date}")
-                    # print(f"Change rate since last sale: {change_rate:.2f}%")
-                    # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
-                    # print(f"     ")
-                    # print("3% STOP LOSSSSSSSSSSSS")
                     previous_capital = capital
                     holdings = 0
 
@@ -101,8 +89,8 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                 capital += (holdings * sell_price) * (1 - commission_rate)
                 accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                 change_rate = ((capital - previous_capital) / previous_capital) * 100
-                # print(f"Sold {bought_ticker} at ${sell_price:.2f} at END OF DAY on {date}")
-                # print(f"Change rate since last sale: {change_rate:.2f}%")
+                print(f"Sold {bought_ticker} at ${sell_price:.2f} at END OF DAY on {date}")
+                print(f"Change rate since last sale: {change_rate:.2f}%")
                 # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                 # print(f"     ")
                 previous_capital = capital
@@ -132,15 +120,15 @@ average_rate = []
 for i in range(0, len(whole_tickers) // 2):
 # for i in range(0,1):
     
-    interval = "1h"
+    interval = "15m"
     # period = "20d"
-    start_date = "2023-01-15"
+    start_date = "2023-11-15"
     end_date = "2024-01-09"
     initial_capital = 10000
     margin = 0.010
     margin2 = 0.030
     stop_loss = 0.015
-    stop_loss2 = 0.5
+    stop_loss2 = 0.05
     commission_rate = 0.001
 
     # tickers = whole_tickers
