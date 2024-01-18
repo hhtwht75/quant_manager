@@ -83,6 +83,18 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     # print(f"     ")
                     previous_capital = capital
                     holdings = 0
+                elif stock_data[bought_ticker].loc[date, "Low"] <= buy_price * 0.97:
+                    sell_price = buy_price * 0.97
+                    capital += (holdings * sell_price) * (1 - commission_rate)
+                    accumulated_return = ((capital - initial_capital) / initial_capital) * 100
+                    change_rate = ((capital - previous_capital) / previous_capital) * 100
+                    print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 3% STOP LOSS rule on {date}")
+                    # print(f"Change rate since last sale: {change_rate:.2f}%")
+                    # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
+                    # print(f"     ")
+                    # print("3% STOP LOSSSSSSSSSSSS")
+                    previous_capital = capital
+                    holdings = 0
 
                 else: #Stoploss even if during hold time
                     if stock_data[bought_ticker].loc[date, "Low"] <= buy_price * (1-stop_loss2):
