@@ -70,12 +70,12 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     # print(f"     ")
                     previous_capital = capital
                     holdings = 0
-                elif stock_data[bought_ticker].loc[date, "Low"] <= buy_price * 0.97:
-                    sell_price = buy_price * 0.97
+                elif stock_data[bought_ticker].loc[date, "Low"] <= buy_price * (1-stop_loss2):
+                    sell_price = buy_price * (1-stop_loss2)
                     capital += (holdings * sell_price) * (1 - commission_rate)
                     accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                     change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 3% STOP LOSS rule on {date}")
+                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to STOP LOSS2 rule on {date}")
                     # print(f"Change rate since last sale: {change_rate:.2f}%")
                     # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                     # print(f"     ")
@@ -83,18 +83,18 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     previous_capital = capital
                     holdings = 0
 
-                else: #Stoploss even if during hold time
-                    if stock_data[bought_ticker].loc[date, "Low"] <= buy_price * (1-stop_loss2):
-                        sell_price = buy_price * (1 - stop_loss2)
-                        capital += (holdings * sell_price) * (1 - commission_rate)
-                        accumulated_return = ((capital - initial_capital) / initial_capital) * 100
-                        change_rate = ((capital - previous_capital) / previous_capital) * 100
-                        print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 5% STOP LOSS rule on {date}")
-                        print(f"Change rate since last sale: {change_rate:.2f}%")
-                        # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
-                        # print(f"     ")
-                        previous_capital = capital
-                        holdings = 0
+                # else: #Stoploss even if during hold time
+                #     if stock_data[bought_ticker].loc[date, "Low"] <= buy_price * (1-stop_loss2):
+                #         sell_price = buy_price * (1 - stop_loss2)
+                #         capital += (holdings * sell_price) * (1 - commission_rate)
+                #         accumulated_return = ((capital - initial_capital) / initial_capital) * 100
+                #         change_rate = ((capital - previous_capital) / previous_capital) * 100
+                #         print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 5% STOP LOSS rule on {date}")
+                #         print(f"Change rate since last sale: {change_rate:.2f}%")
+                #         # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
+                #         # print(f"     ")
+                #         previous_capital = capital
+                #         holdings = 0
 
             elif date.time() == closing_time:
                 sell_price = stock_data[bought_ticker].loc[date, "Close"]
@@ -123,6 +123,10 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
 
 # whole_tickers = ["TQQQ", "SQQQ"]
 # whole_tickers = ["LABD", "LABU"]
+# whole_tickers = ["LABU", "LABD"]
+# whole_tickers = ["LABU", "LABU", "LABD", "LABD"]
+
+
 whole_tickers = ["SOXL", "SOXS"]
 # whole_tickers = ["TYD", "TYO"]
 
@@ -132,12 +136,12 @@ average_rate = []
 for i in range(0, len(whole_tickers) // 2):
 # for i in range(0,1):
     
-    interval = "1h"
-    # period = "20d"
-    start_date = "2023-01-15"
-    end_date = "2024-01-09"
+    interval = "15m"
+    # period = "20d"W
+    start_date = "2023-09-11"
+    end_date = "2023-10-09"
     initial_capital = 10000
-    margin = 0.010
+    margin = 0.01
     margin2 = 0.030
     stop_loss = 0.015
     stop_loss2 = 0.5
@@ -145,6 +149,7 @@ for i in range(0, len(whole_tickers) // 2):
 
     # tickers = whole_tickers
     tickers = whole_tickers[i*2 : i*2 + 2]
+    # tickers = whole_tickers[i]
     stock_data = fetch_stock_data(tickers, interval, start_date, end_date)
 
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate)
