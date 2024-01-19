@@ -11,12 +11,14 @@ def fetch_stock_data(tickers, interval="15m", start_date=None, end_date=None):
             print(f"Error fetching data for {ticker}: {e}")
     return df
 
-def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01, stop_loss=0.015, commission_rate=0.001, count_hold=1):
+def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01, stop_loss=0.015, commission_rate=0.001, count_hold=1, close_count=25):
     capital = initial_capital
     previous_capital = initial_capital  # Capital after the previous sell
     holdings = 0  # Number of stocks held
     opening_time = stock_data[tickers[0]].index[0].time()
-    closing_time = stock_data[tickers[0]].index[-1].time()
+    # closing_time = stock_data[tickers[0]].index[-1].time()
+    closing_time = stock_data[tickers[0]].index[close_count].time()
+    # print("Closing: ", stock_data[tickers[0]].index[-1].time())
     bought_today = False  # Flag to check if a stock was bought on the current date
 
     date_save = None
@@ -29,10 +31,6 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
             count = 0
             date_save = date.date()
 
-        # print(count)
-        # print(date.date())
-        
-        # if date.time() == opening_time:
         if count == 0:
 
             opening_price = []
@@ -77,8 +75,8 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     capital += (holdings * sell_price) * (1 - commission_rate)
                     accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                     change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 1.5% STOP LOSS rule on {date}")
-                    print(f"Change rate since last sale: {change_rate:.2f}%")
+                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 1.5% STOP LOSS rule on {date}")
+                    # print(f"Change rate since last sale: {change_rate:.2f}%")
                     # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                     # print(f"     ")
                     previous_capital = capital
@@ -88,7 +86,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     capital += (holdings * sell_price) * (1 - commission_rate)
                     accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                     change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to STOP LOSS2 rule on {date}")
+                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 5% STOP LOSS rule on {date}")
                     # print(f"Change rate since last sale: {change_rate:.2f}%")
                     # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                     # print(f"     ")
@@ -96,26 +94,14 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     previous_capital = capital
                     holdings = 0
 
-                # else: #Stoploss even if during hold time
-                #     if stock_data[bought_ticker].loc[date, "Low"] <= buy_price * (1-stop_loss2):
-                #         sell_price = buy_price * (1 - stop_loss2)
-                #         capital += (holdings * sell_price) * (1 - commission_rate)
-                #         accumulated_return = ((capital - initial_capital) / initial_capital) * 100
-                #         change_rate = ((capital - previous_capital) / previous_capital) * 100
-                #         print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 5% STOP LOSS rule on {date}")
-                #         print(f"Change rate since last sale: {change_rate:.2f}%")
-                #         # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
-                #         # print(f"     ")
-                #         previous_capital = capital
-                #         holdings = 0
-
             elif date.time() == closing_time:
+            # elif count == 7:
                 sell_price = stock_data[bought_ticker].loc[date, "Close"]
                 capital += (holdings * sell_price) * (1 - commission_rate)
                 accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                 change_rate = ((capital - previous_capital) / previous_capital) * 100
-                print(f"Sold {bought_ticker} at ${sell_price:.2f} at END OF DAY on {date}")
-                print(f"Change rate since last sale: {change_rate:.2f}%")
+                # print(f"Sold {bought_ticker} at ${sell_price:.2f} at END OF DAY on {date}")
+                # print(f"Change rate since last sale: {change_rate:.2f}%")
                 # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                 # print(f"     ")
                 previous_capital = capital
@@ -127,56 +113,52 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
     profit_or_loss = capital - initial_capital
     return accumulated_return
 
-# whole_tickers = ["TQQQ", "SQQQ", "TMV", "TMf", "TYO", "TYD", "YANG", "YINN", "EDZ", "EDC", "TZA", "TNA", "WEBL", "WEBS", "FAZ", "FAS", "DRV", "DRN", "HIBS", "HIBL", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS"]
-# whole_tickers = ["TQQQ", "SQQQ", "LABD", "LABU", "SOXL", "SOXS", "FNGU", "FNGD"]
-# whole_tickers = ["TQQQ", "SQQQ","SOXL", "SOXS", "LABD", "LABU", "FNGU", "FNGD"]
-# whole_tickers = ["TQQQ", "SQQQ", "SOXL", "SOXS"]
-# whole_tickers = ["LABD", "LABU", "SOXL", "SOXS"]
-# whole_tickers = ["SOXL", "SOXS", "LABD", "LABU"]
-
 # whole_tickers = ["TQQQ", "SQQQ"]
 # whole_tickers = ["LABD", "LABU"]
-# whole_tickers = ["SOXS", "SOXL"]
+whole_tickers = ["SOXS", "SOXL"]
 # whole_tickers = ["LABU", "LABD"]
 # whole_tickers = ["LABU", "LABU", "LABD", "LABD"]
 
 
-whole_tickers = ["SOXL", "SOXS"]
-# whole_tickers = ["TYD", "TYO"]
-
 
 average_rate = []
 
-for i in range(0, len(whole_tickers) // 2):
-# for i in range(0,2):
-    
-    interval = "1h"
-    # period = "20d"
-    start_date = "2023-01-15"
-    end_date = "2024-01-09"
-    initial_capital = 10000
-    margin = 0.01
-    margin2 = 0.030
-    stop_loss = 0.015
-    stop_loss2 = 0.05
-    commission_rate = 0.001
-    count_hold = 4
+for c in range(0,26):
+    for i in range(0, len(whole_tickers) // 2):
+    # for i in range(0,2):
+        
+        interval = "15m"
+        # period = "20d"
+        start_date = "2024-01-01"
+        end_date = "2024-01-19"
+        initial_capital = 10000
+        margin = 0.01
+        margin2 = 0.030
+        stop_loss = 0.015
+        stop_loss2 = 0.05
+        commission_rate = 0.001
+        count_hold = 4
+        close_count=c
+        
 
-    # tickers = whole_tickers
-    tickers = whole_tickers[i*2 : i*2 + 2]
-    stock_data = fetch_stock_data(tickers, interval, start_date, end_date)
-    # print(stock_data)
+        # tickers = whole_tickers
+        tickers = whole_tickers[i*2 : i*2 + 2]
+        stock_data = fetch_stock_data(tickers, interval, start_date, end_date)
 
-    accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold)
-    # print(f"Initial Capital: ${initial_capital:.2f}")
-    # print(f"Final Capital: ${final_capital:.2f}")
-    # print(f"Profit or Loss: ${profit_or_loss:.2f}")
+        # pd.set_option('display.max_rows', None)  # 모든 행 표시
+        # pd.set_option('display.max_columns', None)  # 모든 열 표시
+        # print(stock_data)
 
-    print(tickers)
-    print(f"Accumulated Return: {accumulated_return:.2f}%")
-    print(f"      ")
+        accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold, close_count)
+        # print(f"Initial Capital: ${initial_capital:.2f}")
+        # print(f"Final Capital: ${final_capital:.2f}")
+        # print(f"Profit or Loss: ${profit_or_loss:.2f}")
 
-    average_rate.append(accumulated_return)
+        print(tickers)
+        print(f"Accumulated Return at {close_count}: {accumulated_return:.2f}%")
+        print(f"      ")
 
-average_rate_value = sum(average_rate)/len(average_rate)
-print(f"Average Return: {average_rate_value:.2f}%")
+        average_rate.append(accumulated_return)
+
+# average_rate_value = sum(average_rate)/len(average_rate)
+# print(f"Average Return: {average_rate_value:.2f}%")
