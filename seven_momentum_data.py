@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+import alpha_vantage_data
 
 def fetch_stock_data(tickers, interval="15m", start_date=None, end_date=None):
     df = {}
