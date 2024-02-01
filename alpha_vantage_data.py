@@ -45,17 +45,3 @@ def alpha_request(ticker='SOXL', month='2024-01'):
 
     # ��� Ȯ��
     return df
-
-def fetch_stock_data(tickers=['SOXL'], interval="15m", start_date="2024-01-01", end_date="2024-01-31"):
-    df = {}
-    for ticker in tickers:
-        try:
-            data = yf.download(ticker, interval=interval, start=start_date, end=end_date)
-            df[ticker] = data
-        except Exception as e:
-            print(f"Error fetching data for {ticker}: {e}")
-    return df
-
-# pd.set_option('display.max_columns', 500)
-# print(fetch_stock_data())
-print(alpha_request('SOXL','2024-01'))

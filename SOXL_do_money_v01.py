@@ -153,7 +153,6 @@ current = start_month_pd
 while current <= end_month_pd:
 
     input_month = current.strftime("%Y-%m")
-    print(input_month)
 
     month = input_month
     initial_capital = 10000
@@ -171,7 +170,7 @@ while current <= end_month_pd:
     sim_result[input_month] = accumulated_return
     print(input_month, accumulated_return)
 
-    current += pd.DateOffset(month=1)
+    current += pd.DateOffset(months=1)
 
 for date, result in sim_result.items():
     print(date, result)
