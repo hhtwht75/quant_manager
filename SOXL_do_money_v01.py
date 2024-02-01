@@ -1,13 +1,14 @@
 import yfinance as yf
 import pandas as pd
 from alpha_vantage_data import *
+from stock_data_alpha import *
 # import time
 
 def fetch_alpha(tickers, month):
     df = {}
     for ticker in tickers:
         try:
-            data = alpha_request(ticker, month)
+            data = filter_ticker_month_data(input_filename="combined_data.csv", ticker=ticker, year_month=month)
             df[ticker] = data
         except Exception as e:
             print(f"Error fetching data for {ticker}: {e}")
@@ -17,14 +18,15 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
     capital = initial_capital
     previous_capital = initial_capital  # Capital after the previous sell
     holdings = 0  # Number of stocks held
-    opening_time = stock_data[tickers[0]].index[0].time()
+    # opening_time = stock_data[tickers[0]].index[0].time()
     closing_time = stock_data[tickers[0]].index[-1].time()
+    # closing_time = stock_data[tickers[0]]['index'].iloc[-1].time()
     bought_today = False  # Flag to check if a stock was bought on the current date
 
     date_save = None
 
     for date in stock_data[tickers[0]].index:
-
+        
         if date_save == date.date():
             count += 1
         else:
@@ -85,18 +87,6 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     # print(f"     ")
                     previous_capital = capital
                     holdings = 0
-                elif stock_data[bought_ticker].loc[date, "Low"] <= buy_price * 0.97:
-                    sell_price = buy_price * 0.97
-                    capital += (holdings * sell_price) * (1 - commission_rate)
-                    accumulated_return = ((capital - initial_capital) / initial_capital) * 100
-                    change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 3% STOP LOSS rule on {date}")
-                    # print(f"Change rate since last sale: {change_rate:.2f}%")
-                    # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
-                    # print(f"     ")
-                    # print("3% STOP LOSSSSSSSSSSSS")
-                    previous_capital = capital
-                    holdings = 0
 
                 else: #Stoploss even if during hold time
                     if stock_data[bought_ticker].loc[date, "Low"] <= buy_price * (1-stop_loss2):
@@ -130,20 +120,13 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
     return accumulated_return
 
 # whole_tickers = ["TQQQ", "SQQQ", "TMV", "TMf", "TYO", "TYD", "YANG", "YINN", "EDZ", "EDC", "TZA", "TNA", "WEBL", "WEBS", "FAZ", "FAS", "DRV", "DRN", "HIBS", "HIBL", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS"]
-# whole_tickers = ["TQQQ", "SQQQ", "LABD", "LABU", "SOXL", "SOXS", "FNGU", "FNGD"]
-# whole_tickers = ["TQQQ", "SQQQ","SOXL", "SOXS", "LABD", "LABU", "FNGU", "FNGD"]
-# whole_tickers = ["TQQQ", "SQQQ", "SOXL", "SOXS"]
-# whole_tickers = ["LABD", "LABU", "SOXL", "SOXS"]
-# whole_tickers = ["SOXL", "SOXS", "LABD", "LABU"]
 
-# whole_tickers = ["TQQQ", "SQQQ"]
 # whole_tickers = ["LABD", "LABU"]
-whole_tickers = ["SOXS", "SOXL"]
-# whole_tickers = ["SOXL", "SOXS"]
-# whole_tickers = ["TYD", "TYO"]
+whole_tickers = ["LABU", "LABD"]
+
 
 start_month = "2023-02"
-end_month = "2024-01"
+end_month = "2023-12"
 start_month_pd = pd.to_datetime(start_month)
 end_month_pd = pd.to_datetime(end_month)
 sim_result = {}
@@ -161,16 +144,19 @@ while current <= end_month_pd:
     stop_loss = 0.015
     stop_loss2 = 0.05
     commission_rate = 0.001
-    count_hold = 4
+    count_hold = 12
 
     tickers = whole_tickers
     stock_data = fetch_alpha(tickers, month)
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold)
 
     sim_result[input_month] = accumulated_return
-    print(input_month, accumulated_return)
+    # print(input_month, accumulated_return)
 
     current += pd.DateOffset(months=1)
 
+total_return = 1
+
 for date, result in sim_result.items():
-    print(date, result)
+    total_return = total_return * (1+(result/100))
+    print(date, result, total_return)

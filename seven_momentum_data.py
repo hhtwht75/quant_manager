@@ -160,6 +160,8 @@ while current <= end_month_pd:
 
     tickers = whole_tickers
     stock_data = fetch_stock_data(tickers, interval, current_start_date, current_end_date)
+    print("STOCK")
+    print(stock_data)
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold, count_end)
 
     sim_result[current] = accumulated_return
