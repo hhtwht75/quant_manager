@@ -4,11 +4,11 @@ from alpha_vantage_data import *
 from stock_data_alpha import *
 # import time
 
-def fetch_alpha(tickers, month):
+def fetch_alpha(input_filename,tickers, month):
     df = {}
     for ticker in tickers:
         try:
-            data = filter_ticker_month_data(input_filename="combined_data.csv", ticker=ticker, year_month=month)
+            data = filter_ticker_month_data(input_filename=input_filename, ticker=ticker, year_month=month)
             df[ticker] = data
         except Exception as e:
             print(f"Error fetching data for {ticker}: {e}")
@@ -121,8 +121,9 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
 
 # whole_tickers = ["TQQQ", "SQQQ", "TMV", "TMf", "TYO", "TYD", "YANG", "YINN", "EDZ", "EDC", "TZA", "TNA", "WEBL", "WEBS", "FAZ", "FAS", "DRV", "DRN", "HIBS", "HIBL", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS"]
 
-# whole_tickers = ["LABD", "LABU"]
-whole_tickers = ["LABU", "LABD"]
+whole_tickers = ["LABD", "LABU"]
+# whole_tickers = ["LABU", "LABD"]
+# whole_tickers = ["SOXL","SOXS"]
 
 
 start_month = "2023-02"
@@ -147,7 +148,8 @@ while current <= end_month_pd:
     count_hold = 12
 
     tickers = whole_tickers
-    stock_data = fetch_alpha(tickers, month)
+    # stock_data = fetch_alpha("SOXLSOXS.csv",tickers, month)
+    stock_data = fetch_alpha("LABULABD.csv",tickers, month)
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold)
 
     sim_result[input_month] = accumulated_return

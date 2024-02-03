@@ -86,7 +86,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     capital += (holdings * sell_price) * (1 - commission_rate)
                     accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                     change_rate = ((capital - previous_capital) / previous_capital) * 100
-                    # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 1.5% STOP LOSS rule on {date}")
+                    print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 1.5% STOP LOSS rule on {date}")
                     # print(f"Change rate since last sale: {change_rate:.2f}%")
                     # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                     # print(f"     ")
@@ -99,7 +99,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                         capital += (holdings * sell_price) * (1 - commission_rate)
                         accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                         change_rate = ((capital - previous_capital) / previous_capital) * 100
-                        # print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 5% STOP LOSS rule on {date}")
+                        print(f"Sold {bought_ticker} at ${sell_price:.2f} due to 5% STOP LOSS rule on {date}")
                         # print(f"Change rate since last sale: {change_rate:.2f}%")
                         # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                         # print(f"     ")
@@ -111,7 +111,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                 capital += (holdings * sell_price) * (1 - commission_rate)
                 accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                 change_rate = ((capital - previous_capital) / previous_capital) * 100
-                # print(f"Sold {bought_ticker} at ${sell_price:.2f} at END OF DAY on {date}")
+                print(f"Sold {bought_ticker} at ${sell_price:.2f} at END OF DAY on {date}")
                 # print(f"Change rate since last sale: {change_rate:.2f}%")
                 # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                 # print(f"     ")
@@ -125,14 +125,14 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
     return accumulated_return
 
 # whole_tickers = ["SOXS", "SOXL"]
-# whole_tickers = ["SOXL", "SOXS"]
+whole_tickers = ["SOXL", "SOXS"]
 # whole_tickers = ["LABU", "LABD"]
 # whole_tickers = ["LABD", "LABU"]
-whole_tickers = ["SOXL"]
+# whole_tickers = ["SOXL"]
 
 interval = "1h"
-start_month = "2023-02"
-end_month = "2024-01"
+start_month = "2023-12"
+end_month = "2023-12"
 start_month_pd = pd.to_datetime(start_month)
 end_month_pd = pd.to_datetime(end_month)
 sim_result = {}
@@ -144,24 +144,25 @@ while current <= end_month_pd:
     current_start_date = current - MonthBegin(1)  # 현재 달의 시작일
     current_end_date = current + MonthEnd(0)  # 현재 달의 말일
 
-    # current_start_date = "2023-12-05"
-    # current_end_date = "2024-01-01"
-    # interval = "5m"
+    current_start_date = "2023-12-05"
+    current_end_date = "2024-01-01"
+    interval = "5m"
 
     initial_capital = 10000
     margin = 0.010
     margin2 = 0.05
     stop_loss = 0.015
-    stop_loss2 = 0.3
+    stop_loss2 = 0.5
     commission_rate = 0.001
-    count_hold = 1
-    # count_end = (count_hold * 6.5) - 1
-    count_end = 20
+    count_hold = 12
+    count_end = (count_hold * 6.5) - 1
+    # count_end = 20
 
     tickers = whole_tickers
     stock_data = fetch_stock_data(tickers, interval, current_start_date, current_end_date)
-    print("STOCK")
-    print(stock_data)
+    print(stock_data["SOXL"].loc["2023-12-11 15:55:00", "Close"])
+    # print("STOCK")
+    # print(stock_data)
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold, count_end)
 
     sim_result[current] = accumulated_return

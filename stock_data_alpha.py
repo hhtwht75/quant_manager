@@ -49,3 +49,5 @@ def filter_ticker_month_data(input_filename, ticker, year_month, output_filename
     else:
         print(f"No data found for ticker {ticker} in {year_month}")
         return None
+    
+# make_csv(["SOXL","SOXS"],"2023-02","2023-12","SOXLSOXS.csv")
