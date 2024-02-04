@@ -22,7 +22,7 @@ def alpha_request(ticker='SOXL', month='2024-01'):
     params = {
         'function' : 'TIME_SERIES_INTRADAY',
         'symbol': ticker,
-        'interval': '5min', # 1min, 5min, 15min, 30min, 60min
+        'interval': '1min', # 1min, 5min, 15min, 30min, 60min
         'extended_hours' : 'false', 
         'month' : month,
         'outputsize': 'full',
@@ -34,7 +34,7 @@ def alpha_request(ticker='SOXL', month='2024-01'):
 
     # print(data)
 
-    time_series_data = data['Time Series (5min)']
+    time_series_data = data['Time Series (1min)']
     df = pd.DataFrame.from_dict(time_series_data, orient='index')
     df.index = pd.to_datetime(df.index)
     df = df.rename(columns={'1. open': 'Open', '2. high': 'High', '3. low': 'Low', '4. close': 'Close', '5. volume': 'Volume'})
