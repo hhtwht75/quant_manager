@@ -60,7 +60,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     capital -= num_stocks * buy_price * (1 + commission_rate)
                     holdings += num_stocks
                     bought_today = True
-                    # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {date}")
+                    print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {date}")
                     break
 
             # elif holdings == 0 and bought_today == True:
@@ -131,8 +131,8 @@ whole_tickers = ["SOXL", "SOXS"]
 # whole_tickers = ["SOXL"]
 
 interval = "1h"
-start_month = "2023-12"
-end_month = "2023-12"
+start_month = "2023-05"
+end_month = "2023-05"
 start_month_pd = pd.to_datetime(start_month)
 end_month_pd = pd.to_datetime(end_month)
 sim_result = {}
@@ -141,12 +141,14 @@ current = start_month_pd
 
 while current <= end_month_pd:
 
-    current_start_date = current - MonthBegin(1)  # 현재 달의 시작일
+    current_start_date = current  # 현재 달의 시작일
     current_end_date = current + MonthEnd(0)  # 현재 달의 말일
 
-    current_start_date = "2023-12-05"
-    current_end_date = "2024-01-01"
-    interval = "5m"
+    # print(current_start_date, current_end_date)
+
+    # current_start_date = "2023-12-01"
+    # current_end_date = "2023-12-31"
+    # interval = "1h"
 
     initial_capital = 10000
     margin = 0.010
@@ -154,13 +156,13 @@ while current <= end_month_pd:
     stop_loss = 0.015
     stop_loss2 = 0.5
     commission_rate = 0.001
-    count_hold = 12
-    count_end = (count_hold * 6.5) - 1
-    # count_end = 20
+    count_hold = 1
+    # count_end = (count_hold * 6.5) - 1
+    count_end = 20
 
     tickers = whole_tickers
     stock_data = fetch_stock_data(tickers, interval, current_start_date, current_end_date)
-    print(stock_data["SOXL"].loc["2023-12-11 15:55:00", "Close"])
+    # print(stock_data["SOXL"].loc["2023-12-11 15:55:00", "Close"])
     # print("STOCK")
     # print(stock_data)
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, count_hold, count_end)
@@ -174,3 +176,5 @@ total_return = 1
 for date, result in sim_result.items():
     total_return = total_return * (1+(result/100))
     print(date, result, total_return)
+
+print("Total Return: ", total_return)
