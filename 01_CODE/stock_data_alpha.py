@@ -1,6 +1,16 @@
 import pandas as pd
 from alpha_vantage_data import *
 
+def fetch_alpha(input_filename,tickers, month):
+    df = {}
+    for ticker in tickers:
+        try:
+            data = filter_ticker_month_data(input_filename=input_filename, ticker=ticker, year_month=month)
+            df[ticker] = data
+        except Exception as e:
+            print(f"Error fetching data for {ticker}: {e}")
+    return df
+
 def make_csv(tickers, start_month, end_month, output_filename="combined_data.csv"):
     start = pd.to_datetime(start_month)
     end = pd.to_datetime(end_month)
@@ -10,7 +20,7 @@ def make_csv(tickers, start_month, end_month, output_filename="combined_data.csv
     current = start
     while current <= end:
         input_month = current.strftime("%Y-%m")
-        result_temp = fetch_alpha(tickers=tickers, month=input_month)
+        result_temp = get_alpha(tickers=tickers, month=input_month)
         
         for ticker in tickers:
             if ticker in result_temp:
@@ -49,5 +59,3 @@ def filter_ticker_month_data(input_filename, ticker, year_month, output_filename
     else:
         print(f"No data found for ticker {ticker} in {year_month}")
         return None
-    
-# make_csv(["SOXL","SOXS"],"2022-01","2022-12","SOXL_2022.csv")

@@ -5,7 +5,7 @@ import datetime
 import pandas as pd
 import yfinance as yf
 
-def fetch_alpha(tickers, month):
+def get_alpha(tickers, month):
     df = {}
     for ticker in tickers:
         try:
@@ -14,6 +14,7 @@ def fetch_alpha(tickers, month):
         except Exception as e:
             print(f"Error fetching data for {ticker}: {e}")
     return df
+
 
 def alpha_request(ticker='SOXL', month='2024-01'):
 

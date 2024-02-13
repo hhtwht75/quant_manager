@@ -4,29 +4,19 @@ from alpha_vantage_data import *
 from stock_data_alpha import *
 import time, os
 
-def fetch_alpha(input_filename,tickers, month):
-    df = {}
-    for ticker in tickers:
-        try:
-            data = filter_ticker_month_data(input_filename=input_filename, ticker=ticker, year_month=month)
-            df[ticker] = data
-        except Exception as e:
-            print(f"Error fetching data for {ticker}: {e}")
-    return df
-
 def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01, stop_loss=0.015, commission_rate=0.001, holding=datetime.time(10, 30, 00), closing=datetime.time(15, 25, 00)):
     capital = initial_capital
     previous_capital = initial_capital  # Capital after the previous sell
-    # opening_time = stock_data[tickers[0]].index[0].time()
-    # closing_time = stock_data[tickers[0]].index[-1].time()
-    # opening_time = "09:30:00"
     holding_time=holding
-    closing_time=closing
-    
-    
+    closing_time=closing    
     bought_today = False  # Flag to check if a stock was bought on the current date
-
     date_save = None
+
+    prev1_open = {}
+    prev1_close = {}
+    prev2_open = {}
+    prev2_close = {}
+    update = False
 
     for idx in stock_data[tickers[0]].index:
         try:
@@ -35,7 +25,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
             else:
                 count = 0
                 date_save = idx.date()
-                change_rate = ((capital - previous_capital) / previous_capital) * 100
+                # change_rate = ((capital - previous_capital) / previous_capital) * 100
                 # print(f"Change rate since last sale: {change_rate:.2f}%")
                 previous_capital = capital
             
@@ -45,6 +35,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                 opening_price = {}
                 bought_ticker = {}
                 bought_today = False
+                update = False
 
                 for ticker in tickers:   
                     # opening_price.append(stock_data[ticker].loc[idx, "Open"])
@@ -53,26 +44,57 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
 
             
                     
-            if idx.time() > datetime.time(15, 58, 00):
+            if idx.time() > datetime.time(15, 58, 00) and update == False:
                 bought_today = False  # Reset the flag for the next day
+                for ticker in tickers:
+                    if prev1_open:
+                        prev2_open[ticker] = prev1_open[ticker]
+                    if prev1_close:
+                        prev2_close[ticker] = prev1_close[ticker]
+                    prev1_open[ticker] = opening_price[ticker]
+                    prev1_close[ticker] = stock_data[ticker].loc[idx, "Close"]
+                update = True
 
             else:
 
                 for ticker in tickers:
 
                     if bought_today == False:
+                            
+                        if not (prev1_open and prev2_open):
 
-                        if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
-                            buy_price = (1 + margin) * opening_price[ticker]
-                            num_stocks = capital // (buy_price * (1 + commission_rate))
-                            capital -= num_stocks * buy_price * (1 + commission_rate)
-                            bought_ticker[ticker] = {}
-                            bought_ticker[ticker]["num_stocks"] = num_stocks
-                            bought_ticker[ticker]["buy_price"] = buy_price
-                            # print(bought_ticker)
-                            bought_today = True
-                            # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
-                            break
+                            if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
+                                buy_price = (1 + margin) * opening_price[ticker]
+                                num_stocks = capital // (buy_price * (1 + commission_rate))
+                                capital -= num_stocks * buy_price * (1 + commission_rate)
+                                bought_ticker[ticker] = {}
+                                bought_ticker[ticker]["num_stocks"] = num_stocks
+                                bought_ticker[ticker]["buy_price"] = buy_price
+                                # print(bought_ticker)
+                                bought_today = True
+                                # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
+                                break
+
+                        else:
+                            
+                            ### Condition
+                            # if prev1_close[ticker] < opening_price[ticker]:
+                            # if prev1_open[ticker] > prev1_close[ticker]:
+                            if prev1_open[ticker] > prev1_close[ticker] and prev1_close[ticker] < opening_price[ticker]:
+                            # if prev1_open[ticker] > prev1_close[ticker] or prev1_close[ticker] < opening_price[ticker]:
+                            # if True:
+                                
+                                if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
+                                    buy_price = (1 + margin) * opening_price[ticker]
+                                    num_stocks = capital // (buy_price * (1 + commission_rate))
+                                    capital -= num_stocks * buy_price * (1 + commission_rate)
+                                    bought_ticker[ticker] = {}
+                                    bought_ticker[ticker]["num_stocks"] = num_stocks
+                                    bought_ticker[ticker]["buy_price"] = buy_price
+                                    # print(bought_ticker)
+                                    bought_today = True
+                                    # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
+                                    break
 
                     # elif ticker == "SOXL" and idx.time() < holding_time and not (ticker in bought_ticker):
 
@@ -140,8 +162,6 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
     return accumulated_return
 
 
-
-
 # whole_tickers = ["TQQQ", "SQQQ", "TMV", "TMf", "TYO", "TYD", "YANG", "YINN", "EDZ", "EDC", "TZA", "TNA", "WEBL", "WEBS", "FAZ", "FAS", "DRV", "DRN", "HIBS", "HIBL", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS"]
 
 # whole_tickers = ["TQQQ", "SQQQ"]
@@ -150,47 +170,53 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
 # whole_tickers = ["SOXL","SOXS"]
 # whole_tickers = ["SOXS","SOXL"]
 
-start_month = "2021-08"
-end_month = "2021-12"
-start_month_pd = pd.to_datetime(start_month)
-end_month_pd = pd.to_datetime(end_month)
-sim_result = {}
+tickers = ["SOXL", "SOXS"]
+# tickers = ["LABU", "LABD"]
+years = ["2021", "2022", "2023"]
+# years = ["2024"]
 
-current = start_month_pd
-while current <= end_month_pd:
+for year in years:
+    start_month = f"{year}-01"
+    end_month = f"{year}-12"
+    start_month_pd = pd.to_datetime(start_month)
+    end_month_pd = pd.to_datetime(end_month)
+    sim_result = {}
 
-    input_month = current.strftime("%Y-%m")
+    current = start_month_pd
+    while current <= end_month_pd:
 
-    month = input_month
-    initial_capital = 10000
-    margin = 0.010
-    margin2 = 0.05
-    stop_loss = 0.015
-    stop_loss2 = 0.05
-    commission_rate = 0.001
-    holding_time = datetime.time(10, 30, 00)
-    closing_time = datetime.time(15, 00, 00)
+        input_month = current.strftime("%Y-%m")
+
+        month = input_month
+        initial_capital = 10000
+        margin = 0.010
+        margin2 = 0.05
+        stop_loss = 0.015
+        stop_loss2 = 0.05
+        commission_rate = 0.000
+        holding_time = datetime.time(10, 30, 00)
+        closing_time = datetime.time(15, 00, 00)
 
 
-    tickers = ["LABU", "LABD"]
-    stock_data = fetch_alpha("./02_DATA/LABU_2021.csv",tickers, month)
-    # tickers = ["SOXL", "SOXS"]
-    # stock_data = fetch_alpha("./02_DATA/SOXL_2022.csv",tickers, month)
-    # tickers = ["TQQQ", "SQQQ"]
-    # stock_data = fetch_alpha("./02_DATA/TQQQ_2023.csv",tickers, month)
+        
+        stock_data = fetch_alpha(f"./02_DATA/{tickers[0]}_{year}.csv",tickers, month)
+        # tickers = ["SOXL", "SOXS"]
+        # stock_data = fetch_alpha("./02_DATA/SOXL_2022.csv",tickers, month)
+        # tickers = ["TQQQ", "SQQQ"]
+        # stock_data = fetch_alpha("./02_DATA/TQQQ_2023.csv",tickers, month)
 
-    # tickers = whole_tickers
-    accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, holding_time, closing_time)
+        # tickers = whole_tickers
+        accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, holding_time, closing_time)
 
-    sim_result[input_month] = accumulated_return
-    # print(input_month, accumulated_return)
+        sim_result[input_month] = accumulated_return
+        # print(input_month, accumulated_return)
 
-    current += pd.DateOffset(months=1)
+        current += pd.DateOffset(months=1)
 
-total_return = 1
+    total_return = 1
 
-for date, result in sim_result.items():
-    total_return = total_return * (1+(result/100))
-    print(date, result, total_return)
+    for date, result in sim_result.items():
+        total_return = total_return * (1+(result/100))
+        # print(date, result, total_return)
 
-print("Total Return: ", total_return)
+    print(f"Total Return of {year}: ", total_return)
