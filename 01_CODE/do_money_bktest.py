@@ -61,7 +61,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
 
                     if bought_today == False:
                             
-                        if not (prev1_open and prev2_open):
+                        if not (prev1_open and prev1_close):
 
                             if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
                                 buy_price = (1 + margin) * opening_price[ticker]
@@ -170,11 +170,17 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
 # whole_tickers = ["SOXL","SOXS"]
 # whole_tickers = ["SOXS","SOXL"]
 
-tickers = ["SOXL", "SOXS"]
-# tickers = ["LABU", "LABD"]
-years = ["2021", "2022", "2023"]
-# years = ["2024"]
+# tickers = ["SOXL", "SOXS"]
+tickers = ["LABU", "LABD"]
+# tickers = ["TQQQ", "SQQQ"]
 
+years = []
+# for i in range (2020,2024,1):
+    # years.append(f"{i}")
+years = ["2020", "2021", "2023"]
+# years = ["2023"]
+
+        
 for year in years:
     start_month = f"{year}-01"
     end_month = f"{year}-12"
@@ -189,23 +195,18 @@ for year in years:
 
         month = input_month
         initial_capital = 10000
-        margin = 0.010
+        margin = 0.01
         margin2 = 0.05
-        stop_loss = 0.015
+        stop_loss = 0.035
         stop_loss2 = 0.05
-        commission_rate = 0.000
+        commission_rate = 0.001
+        # commission_rate = 0.001*rate/5
         holding_time = datetime.time(10, 30, 00)
         closing_time = datetime.time(15, 00, 00)
 
 
         
         stock_data = fetch_alpha(f"./02_DATA/{tickers[0]}_{year}.csv",tickers, month)
-        # tickers = ["SOXL", "SOXS"]
-        # stock_data = fetch_alpha("./02_DATA/SOXL_2022.csv",tickers, month)
-        # tickers = ["TQQQ", "SQQQ"]
-        # stock_data = fetch_alpha("./02_DATA/TQQQ_2023.csv",tickers, month)
-
-        # tickers = whole_tickers
         accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, holding_time, closing_time)
 
         sim_result[input_month] = accumulated_return
