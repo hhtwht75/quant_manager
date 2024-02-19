@@ -42,6 +42,12 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     opening_price[ticker] = stock_data[ticker].loc[idx, "Open"]
                     # bought_ticker[ticker] = {}
 
+                # for ticker in bought_ticker:
+                #     sell_price = opening_price[ticker]
+                #     capital += (bought_ticker[ticker]["num_stocks"] * sell_price) * (1 - commission_rate)
+                #     print(f"Sold {ticker} at ${sell_price:.2f} at OPENING OF DAY on {idx}")
+                #     bought_ticker[ticker]["num_stocks"] = 0
+
             
                     
             if idx.time() > datetime.time(15, 58, 00) and update == False:
@@ -63,17 +69,19 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                             
                         if not (prev1_open and prev1_close):
 
-                            if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
-                                buy_price = (1 + margin) * opening_price[ticker]
-                                num_stocks = capital // (buy_price * (1 + commission_rate))
-                                capital -= num_stocks * buy_price * (1 + commission_rate)
-                                bought_ticker[ticker] = {}
-                                bought_ticker[ticker]["num_stocks"] = num_stocks
-                                bought_ticker[ticker]["buy_price"] = buy_price
-                                # print(bought_ticker)
-                                bought_today = True
-                                # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
-                                break
+                            continue
+
+                            # if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
+                            #     buy_price = (1 + margin) * opening_price[ticker]
+                            #     num_stocks = capital // (buy_price * (1 + commission_rate))
+                            #     capital -= num_stocks * buy_price * (1 + commission_rate)
+                            #     bought_ticker[ticker] = {}
+                            #     bought_ticker[ticker]["num_stocks"] = num_stocks
+                            #     bought_ticker[ticker]["buy_price"] = buy_price
+                            #     # print(bought_ticker)
+                            #     bought_today = True
+                            #     # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
+                            #     break
 
                         else:
                             
@@ -122,7 +130,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                                     capital += (bought_ticker[ticker]["num_stocks"] * sell_price) * (1 - commission_rate)
                                     accumulated_return = ((capital - initial_capital) / initial_capital) * 100
                                     change_rate = ((capital - previous_capital) / previous_capital) * 100
-                                    # print(f"Sold {ticker} at ${sell_price:.2f} due to 1.5% STOP LOSS rule on {idx}")
+                                    # print(f"Sold {ticker} at ${sell_price:.2f} due to 3.5% STOP LOSS rule on {idx}")
                                     # print(f"Change rate since last sale: {change_rate:.2f}%")
                                     # print(f"Accumulated return after sale: {accumulated_return:.2f}%")
                                     # print(f"     ")
@@ -175,10 +183,10 @@ tickers = ["LABU", "LABD"]
 # tickers = ["TQQQ", "SQQQ"]
 
 years = []
-# for i in range (2020,2024,1):
+# for i in range (2018,2024,1):
     # years.append(f"{i}")
 years = ["2020", "2021", "2023"]
-# years = ["2023"]
+# years = ["2024"]
 
         
 for year in years:
@@ -218,6 +226,6 @@ for year in years:
 
     for date, result in sim_result.items():
         total_return = total_return * (1+(result/100))
-        # print(date, result, total_return)
+        print(date, result, total_return)
 
     print(f"Total Return of {year}: ", total_return)
