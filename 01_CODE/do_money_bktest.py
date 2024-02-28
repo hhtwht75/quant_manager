@@ -89,22 +89,10 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
 
                             continue
 
-                            # if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
-                            #     buy_price = (1 + margin) * opening_price[ticker]
-                            #     num_stocks = capital // (buy_price * (1 + commission_rate))
-                            #     capital -= num_stocks * buy_price * (1 + commission_rate)
-                            #     bought_ticker[ticker] = {}
-                            #     bought_ticker[ticker]["num_stocks"] = num_stocks
-                            #     bought_ticker[ticker]["buy_price"] = buy_price
-                            #     # print(bought_ticker)
-                            #     bought_today = True
-                            #     # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
-                            #     break
-
                         else:
                             
                             if is_market_close_at_1600(today, nyse_calendar):
-                            ### Condition
+
                                 # if prev1_close[ticker] < opening_price[ticker]:
                                 # if prev1_open[ticker] > prev1_close[ticker]:
                                 if prev1_open[ticker] > prev1_close[ticker] and prev1_close[ticker] < opening_price[ticker]:
@@ -122,19 +110,6 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
                                         bought_today = True
                                         # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
                                         break
-
-                    # elif ticker == "SOXL" and idx.time() < holding_time and not (ticker in bought_ticker):
-
-                    #     if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
-                    #         buy_price = max((1 + margin) * opening_price[ticker], stock_data[ticker].loc[idx, "Open"])
-                    #         num_stocks = previous_capital // (buy_price * (1 + commission_rate))
-                    #         capital -= num_stocks * buy_price * (1 + commission_rate)
-                    #         bought_ticker[ticker] = {}
-                    #         bought_ticker[ticker]["num_stocks"] = num_stocks
-                    #         bought_ticker[ticker]["buy_price"] = buy_price
-                    #         bought_today = True
-                    #         # print(f"Additionally Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
-                    #         break
 
                 if bought_today:
 
@@ -180,8 +155,8 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
                             # print(f"     ")
                             # previous_capital = capital
                             bought_ticker[ticker]["num_stocks"] = 0
-        except KeyError:
-            print(f"KeyError: {KeyError}")
+        except KeyError as e:
+            # print(f"KeyError: {KeyError}")
             continue
         
         
@@ -189,26 +164,23 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
     return accumulated_return
 
 
-# whole_tickers = ["TQQQ", "SQQQ", "TMV", "TMf", "TYO", "TYD", "YANG", "YINN", "EDZ", "EDC", "TZA", "TNA", "WEBL", "WEBS", "FAZ", "FAS", "DRV", "DRN", "HIBS", "HIBL", "LABD", "LABU", "SOXL", "SOXS", "TECL", "TECS"]
-
-# whole_tickers = ["TQQQ", "SQQQ"]
-# whole_tickers = ["LABD", "LABU"]
-# whole_tickers = ["LABU", "LABD"]
-# whole_tickers = ["SOXL","SOXS"]
-# whole_tickers = ["SOXS","SOXL"]
-
 # tickers = ["SOXL", "SOXS"]
 # tickers = ["SOXL"]
 # tickers = ["LABU", "LABD"]
 # tickers = ["LABU"]
 # tickers = ["TQQQ", "SQQQ"]
-tickers = ["TQQQ"]
+# tickers = ["TQQQ"]
+tickers = ('SOXL',)
 
-# years = []
-# for i in range (2015,2024,1):
-    # years.append(f"{i}")
+dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
+# dir_path = f"./02_DATA/direxion_2x/{tickers[0]}"
+# dir_path = f"./02_DATA/direxion_single/{tickers[0]}"
+
+years = []
+for i in range (2019,2024,1):
+    years.append(f"{i}")
 # years = ["2020", "2021", "2023"]
-years = ["2023"]
+# years = ["2023"]
 
         
 # for year in years:
@@ -263,12 +235,12 @@ for year in years:
     margin2 = 0.05
     stop_loss = 0.035
     stop_loss2 = 0.05
-    commission_rate = 0.000
+    commission_rate = 0.001
     # commission_rate = 0.001*rate/5
     holding_time = datetime.time(10, 30, 00)
     closing_time = datetime.time(15, 00, 00)
     
-    stock_data = fetch_alpha_year(f"./02_DATA/{tickers[0]}_{year}.csv",tickers)
+    stock_data = fetch_alpha_year(f"{dir_path}/{tickers[0]}_{year}.csv",tickers)
     accumulated_return = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, commission_rate, holding_time, closing_time)
 
     total_return = 1 + accumulated_return/100
@@ -276,4 +248,4 @@ for year in years:
     if total_return > 1.025:
         total_return = ((total_return*10000 - 10250)*0.78 + 10250)/10000 # TAX
 
-    print(f"Total Return of {tickers[0]} at {year}: ", total_return)
+    print(f"Total Return of {tickers} at {year}: ", total_return)

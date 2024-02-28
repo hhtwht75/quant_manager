@@ -1,0 +1,37 @@
+2020년 이전 데이터는 부정확한 경우가 많으므로 참고용으로만 사용.
+long과 long&short는 분명한 차이가 있다.
+
+긍정적: ('HIBL',) ('LABU',) ('SOXL',)
+준수함: ('FAS',) ('KORU',)
+부정적: 
+롱텀 검증 필요 & 판단 보류: ('NAIL',)
+
+Total Return of ('HIBL',) at 2019:  0.9884247502745819
+Total Return of ('HIBL',) at 2020:  0.9847213919650133
+Total Return of ('HIBL',) at 2021:  1.5709162142244748
+Total Return of ('HIBL',) at 2022:  1.0301915389719751
+Total Return of ('HIBL',) at 2023:  1.1149821713298853
+
+Total Return of ('KORU',) at 2019:  1.025538267618679
+Total Return of ('KORU',) at 2020:  0.8702105544663037
+Total Return of ('KORU',) at 2021:  1.0628717629681206
+Total Return of ('KORU',) at 2022:  1.0315640513629585
+Total Return of ('KORU',) at 2023:  1.0056858543363756
+
+Total Return of ('LABU',) at 2019:  1.0881404052117194
+Total Return of ('LABU',) at 2020:  1.2200707841581082
+Total Return of ('LABU',) at 2021:  1.4172636916677612
+Total Return of ('LABU',) at 2022:  0.6351203413644688
+Total Return of ('LABU',) at 2023:  1.646812226495002
+
+Total Return of ('NAIL',) at 2019:  1.1824466060495527
+Total Return of ('NAIL',) at 2020:  1.6180463242573537
+Total Return of ('NAIL',) at 2021:  1.4221773513968023
+Total Return of ('NAIL',) at 2022:  0.4695528454106639
+Total Return of ('NAIL',) at 2023:  0.8135360165893988
+
+Total Return of ('SOXL',) at 2019:  1.377481816795147
+Total Return of ('SOXL',) at 2020:  1.2138475573495096
+Total Return of ('SOXL',) at 2021:  1.1791841350747336
+Total Return of ('SOXL',) at 2022:  1.0015391902427038
+Total Return of ('SOXL',) at 2023:  1.0797200203459092
