@@ -1,5 +1,6 @@
 # coding: utf-8
 # API: UKEEHPB4Z00E8C7Y
+# API Premium: 69Y1EGO0TWH4NCSZ
 import requests
 import datetime
 import pandas as pd
@@ -27,7 +28,7 @@ def alpha_request(ticker='SOXL', month='2024-01'):
         'extended_hours' : 'false', 
         'month' : month,
         'outputsize': 'full',
-        'apikey': 'UKEEHPB4Z00E8C7Y'
+        'apikey': '69Y1EGO0TWH4NCSZ'
     }
 
     r = requests.get(url, params=params)
