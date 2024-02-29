@@ -170,7 +170,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
 # tickers = ["LABU"]
 # tickers = ["TQQQ", "SQQQ"]
 # tickers = ["TQQQ"]
-tickers = ('SOXL',)
+tickers = ('YINN', 'YANG')
 
 dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
 # dir_path = f"./02_DATA/direxion_2x/{tickers[0]}"

@@ -9,25 +9,17 @@ import time
 
 # tickers = ["TSLL", "TSLS"]
 ticker_dict = {
-    ('KORU',): 2013,
-    ('SPXL', 'SPXS'): 2008,
-    ('TNA','TZA'): 2008,
-    ('DFEN',): 2017,
-    ('WEBL','WEBS'): 2019,
-    ('FAS','FAZ'): 2008,
-    ('NAIL',): 2015,
-    ('DRN','DRV'): 2009,
-    ('DPST',): 2015,
-    ('HIBL','HIBS'): 2019,
-    ('TECL','TECS'): 2008,
-    ('RETL.IV',): 2010
+    ('UDOW', 'SDOW'): 2010,
+    ('UMDD', 'SMDD'): 2010,
+    ('URTY', 'SRTY'): 2010,
+    ('UPRO', 'SPXU'): 2006
 }
 
 for tickers, start_year in ticker_dict.items():
     for year in range(start_year,2025,1):
         try:
             time.sleep(60)  
-            make_csv(tickers,f"{year}-01",f"{year}-12",f"./02_DATA/direxion_3x/{tickers[0]}/{tickers[0]}_{year}.csv")
+            make_csv(tickers,f"{year}-01",f"{year}-12",f"./02_DATA/proshares_3x/{tickers[0]}/{tickers[0]}_{year}.csv")
         except BaseException as e:
             print("Error:", e)
         
