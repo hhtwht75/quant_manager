@@ -1,12 +1,12 @@
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+# import matplotlib.pyplot as plt
+# from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 import yfinance as yf
 import pandas as pd
 from pandas.tseries.offsets import MonthBegin, MonthEnd
 
-import alpha_vantage_data
+# import alpha_vantage_data
 
 def fetch_stock_data(tickers, interval="15m", start_date=None, end_date=None):
     df = {}
@@ -60,7 +60,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=100000, margin = 0.01
                     capital -= num_stocks * buy_price * (1 + commission_rate)
                     holdings += num_stocks
                     bought_today = True
-                    print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {date}")
+                    # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {date}")
                     break
 
             # elif holdings == 0 and bought_today == True:
@@ -131,8 +131,8 @@ whole_tickers = ["SOXL", "SOXS"]
 # whole_tickers = ["SOXL"]
 
 interval = "1h"
-start_month = "2023-05"
-end_month = "2023-05"
+start_month = "2024-02"
+end_month = "2024-02"
 start_month_pd = pd.to_datetime(start_month)
 end_month_pd = pd.to_datetime(end_month)
 sim_result = {}
@@ -146,19 +146,19 @@ while current <= end_month_pd:
 
     # print(current_start_date, current_end_date)
 
-    # current_start_date = "2023-12-01"
-    # current_end_date = "2023-12-31"
+    current_start_date = "2024-02-20"
+    current_end_date = "2024-03-01"
     # interval = "1h"
 
     initial_capital = 10000
     margin = 0.010
     margin2 = 0.05
-    stop_loss = 0.015
-    stop_loss2 = 0.5
+    stop_loss = 0.035
+    stop_loss2 = 0.05
     commission_rate = 0.001
-    count_hold = 1
-    # count_end = (count_hold * 6.5) - 1
-    count_end = 20
+    count_hold = 4
+    count_end = (count_hold * 6.5) - 1
+    # count_end = 6
 
     tickers = whole_tickers
     stock_data = fetch_stock_data(tickers, interval, current_start_date, current_end_date)

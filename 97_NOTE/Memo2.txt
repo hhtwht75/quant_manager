@@ -1,0 +1,81 @@
+긍정적: ('HIBL',) ('LABU',) ('SOXL',) ('TECL',) ('WEBL',) ('UMDD',)
+UMDD는 조건 없이 그냥 했을 때 수익률이 더 좋았다. WHY?
+
+409.52
+
+Total Return of ('HIBL',) at 2019:  0.9884247502745819
+Total Return of ('HIBL',) at 2020:  0.9847213919650133
+Total Return of ('HIBL',) at 2021:  1.5709162142244748
+Total Return of ('HIBL',) at 2022:  1.0301915389719751
+Total Return of ('HIBL',) at 2023:  1.1149821713298853
+
+수익률: 68.2%
+동일기간 QQQ: 56%
+
+Total Return of ('LABU',) at 2015:  0.790829688101623
+Total Return of ('LABU',) at 2016:  0.7254405827777031
+Total Return of ('LABU',) at 2017:  1.1930393514859765
+Total Return of ('LABU',) at 2018:  0.9625649379385575
+Total Return of ('LABU',) at 2019:  1.0881404052117194
+Total Return of ('LABU',) at 2020:  1.2200707841581082
+Total Return of ('LABU',) at 2021:  1.4172636916677612
+Total Return of ('LABU',) at 2022:  0.6351203413644688
+Total Return of ('LABU',) at 2023:  1.646812226495002
+
+수익률: 67.6%
+동일기간 QQQ: 152%
+
+Total Return of ('SOXL',) at 2010:  0.8557391007622192
+Total Return of ('SOXL',) at 2011:  1.2395541111979622
+Total Return of ('SOXL',) at 2012:  1.030700748964637
+Total Return of ('SOXL',) at 2013:  1.0175635556466545
+Total Return of ('SOXL',) at 2014:  1.047711304467222
+Total Return of ('SOXL',) at 2015:  1.2864653448623191
+Total Return of ('SOXL',) at 2016:  0.867489684403184
+Total Return of ('SOXL',) at 2017:  1.042362791591512
+Total Return of ('SOXL',) at 2018:  0.8353341281744274
+Total Return of ('SOXL',) at 2019:  1.377481816795147
+Total Return of ('SOXL',) at 2020:  1.2138475573495096
+Total Return of ('SOXL',) at 2021:  1.1791841350747336
+Total Return of ('SOXL',) at 2022:  1.0015391902427038
+Total Return of ('SOXL',) at 2023:  1.0797200203459092
+
+수익률: 106.7%
+동일기간 QQQ: 534.1%
+
+Total Return of ('TECL',) at 2009:  0.755020557685392
+Total Return of ('TECL',) at 2010:  0.8851771169208755
+Total Return of ('TECL',) at 2011:  0.8263346156412655
+Total Return of ('TECL',) at 2012:  1.0208268633751207
+Total Return of ('TECL',) at 2013:  0.8796785234575277
+Total Return of ('TECL',) at 2014:  0.9287080297000588
+Total Return of ('TECL',) at 2015:  1.0561634704622849
+Total Return of ('TECL',) at 2016:  1.0826178718931774
+Total Return of ('TECL',) at 2017:  1.0867657814915137
+Total Return of ('TECL',) at 2018:  0.7465510865302237
+Total Return of ('TECL',) at 2019:  1.0612370071313157
+Total Return of ('TECL',) at 2020:  1.5628510215619285
+Total Return of ('TECL',) at 2021:  1.235301018400411
+Total Return of ('TECL',) at 2022:  0.9052329420788666
+Total Return of ('TECL',) at 2023:  0.9918631871510079
+
+Total Return of ('WEBL',) at 2019:  1.0036794951758183
+Total Return of ('WEBL',) at 2020:  0.8266278904154383
+Total Return of ('WEBL',) at 2021:  1.1138637971907124
+Total Return of ('WEBL',) at 2022:  1.1565232965797447
+Total Return of ('WEBL',) at 2023:  1.0727126715031277
+
+Total Return of ('UMDD',) at 2010:  1.045028221645925
+Total Return of ('UMDD',) at 2011:  1.2782326412146154
+Total Return of ('UMDD',) at 2012:  0.9770713096482769
+Total Return of ('UMDD',) at 2013:  1.0779463891432413
+Total Return of ('UMDD',) at 2014:  0.8552796255658033
+Total Return of ('UMDD',) at 2015:  1.0420131693269035
+Total Return of ('UMDD',) at 2016:  1.0947622462566888
+Total Return of ('UMDD',) at 2017:  1.0011000811660935
+Total Return of ('UMDD',) at 2018:  1.0294957807547185
+Total Return of ('UMDD',) at 2019:  1.1624009815864667
+Total Return of ('UMDD',) at 2020:  1.0076375374719189
+Total Return of ('UMDD',) at 2021:  1.422225476226795
+Total Return of ('UMDD',) at 2022:  1.0674310121561164
+Total Return of ('UMDD',) at 2023:  1.2313666023101395

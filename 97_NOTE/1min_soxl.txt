@@ -1,0 +1,79 @@
+
+
+
+
+Sold SOXL at $9.56 due to 3.5% STOP LOSS rule on 2023-01-04 10:31:00
+Change rate since last sale: -3.69%
+Accumulated return after sale: -3.69%
+     
+Sold SOXS at $37.15 at END OF DAY on 2023-01-05 15:01:00
+Change rate since last sale: -0.55%
+Accumulated return after sale: -4.21%
+     
+Sold SOXL at $10.91 at END OF DAY on 2023-01-06 15:01:00
+Change rate since last sale: 9.07%
+Accumulated return after sale: 4.48%
+     
+Sold SOXS at $29.40 due to 5% STOP LOSS rule on 2023-01-09 09:53:00
+Change rate since last sale: -5.19%
+Accumulated return after sale: -0.94%
+     
+Sold SOXL at $11.76 at END OF DAY on 2023-01-10 15:01:00
+Change rate since last sale: 2.80%
+Accumulated return after sale: 1.84%
+     
+Sold SOXS at $28.96 at END OF DAY on 2023-01-11 15:01:00
+Change rate since last sale: -2.64%
+Accumulated return after sale: -0.86%
+     
+Sold SOXL at $12.00 due to 5% STOP LOSS rule on 2023-01-12 09:43:00
+Change rate since last sale: -5.19%
+Accumulated return after sale: -6.00%
+     
+Sold SOXL at $12.72 at END OF DAY on 2023-01-13 15:01:00
+Change rate since last sale: 2.31%
+Accumulated return after sale: -3.83%
+     
+Sold SOXL at $13.07 at END OF DAY on 2023-01-17 15:01:00
+Change rate since last sale: 0.95%
+Accumulated return after sale: -2.91%
+     
+Sold SOXL at $13.02 due to 3.5% STOP LOSS rule on 2023-01-18 11:21:00
+Change rate since last sale: -3.69%
+Accumulated return after sale: -6.49%
+     
+Sold SOXS at $28.72 at END OF DAY on 2023-01-19 15:01:00
+Change rate since last sale: 0.84%
+Accumulated return after sale: -5.71%
+     
+Sold SOXS at $28.11 due to 3.5% STOP LOSS rule on 2023-01-20 13:36:00
+Change rate since last sale: -3.69%
+Accumulated return after sale: -9.19%
+     
+Sold SOXL at $14.30 at END OF DAY on 2023-01-23 15:01:00
+Change rate since last sale: 7.97%
+Accumulated return after sale: -1.95%
+     
+Sold SOXL at $14.31 at END OF DAY on 2023-01-24 15:01:00
+Change rate since last sale: -0.47%
+Accumulated return after sale: -2.42%
+     
+Sold SOXS at $23.95 due to 3.5% STOP LOSS rule on 2023-01-25 11:52:00
+Change rate since last sale: -3.68%
+Accumulated return after sale: -6.01%
+     
+Sold SOXL at $14.31 due to 5% STOP LOSS rule on 2023-01-26 09:56:00
+Change rate since last sale: -5.19%
+Accumulated return after sale: -10.89%
+     
+Sold SOXL at $15.13 at END OF DAY on 2023-01-27 15:01:00
+Change rate since last sale: 3.91%
+Accumulated return after sale: -7.40%
+     
+Sold SOXS at $24.01 at END OF DAY on 2023-01-30 15:01:00
+Change rate since last sale: 1.35%
+Accumulated return after sale: -6.15%
+     
+Sold SOXL at $14.19 at END OF DAY on 2023-01-31 15:01:00
+Change rate since last sale: 3.28%
+Accumulated return after sale: -3.08%
