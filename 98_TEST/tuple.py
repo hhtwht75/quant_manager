@@ -1,5 +1,3 @@
-# tup_ex = ("abc", "def")
-tup_ex = ("abc",)
+list_a = [3]
 
-for i in tup_ex:
-    print(i)
+print(list_a[-1])
