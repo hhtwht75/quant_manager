@@ -102,12 +102,12 @@ def get_stock_data(symbols, year):
     final_df.to_csv(f"./02_DATA/direxion_3x/{symbols[0]}/{symbols[0]}_{year}.csv")
     print(f"{symbols[0]}_{year}.csv is saved")
 
-# for year in range(2024,2025,1):
-#     get_stock_data(("HIBL","HIBS"),year)
+# whole_tickers = [("TMF","TMV"),("TNA","TZA"),("YINN","YANG")]
+# for tickers in whole_tickers:
+#     for year in range(2019,2024):
+#         get_stock_data(tickers,year)
 
-# for year in range(2016,2017,1):
-#     get_stock_data(("UMDD","SMDD"),year)
+for year in range(2016,2024):
+    get_stock_data(("QQQ","PSQ"),year)
 
-for year in range(2016,2024,1):
-    get_stock_data(("TECL","TECS"),year)
 
