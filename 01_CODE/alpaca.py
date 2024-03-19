@@ -92,6 +92,7 @@ def get_stock_data(symbols, year):
         except TimeoutError as te:
             print(f"Timeout Error: {te}")
             time.sleep(60)
+            continue
         except ValueError as ve:
             # print(f"Value Error: {ve} at {start}")
             time.sleep(0.5)
@@ -99,15 +100,17 @@ def get_stock_data(symbols, year):
             continue
 
     final_df = pd.concat(all_data)
-    final_df.to_csv(f"./02_DATA/direxion_3x/{symbols[0]}/{symbols[0]}_{year}.csv")
+    final_df.to_csv(f"./02_DATA/1x/{symbols[0]}/{symbols[0]}_{year}.csv")
     print(f"{symbols[0]}_{year}.csv is saved")
 
-# whole_tickers = [("TMF","TMV"),("TNA","TZA"),("YINN","YANG")]
-# for tickers in whole_tickers:
-#     for year in range(2019,2024):
-#         get_stock_data(tickers,year)
+for year in range(2019,2024):
+    get_stock_data(("NVDA","NVDD"),year)
 
-for year in range(2016,2024):
-    get_stock_data(("QQQ","PSQ"),year)
+whole_tickers = [("TSLA","TSLS")]
+for tickers in whole_tickers:
+    for year in range(2016,2024):
+        get_stock_data(tickers,year)
+
+
 
 

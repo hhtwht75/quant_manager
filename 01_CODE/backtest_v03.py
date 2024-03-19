@@ -118,16 +118,16 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
                                     if not target_cnt:
                                         if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
                                             target_cnt.append(ticker)
+
                                             buy_price = (1 + margin) * opening_price[ticker]
-                                            # temp_capital = previous_capital // (len(target_cnt)+1)
                                             temp_capital = capital / 2
                                             num_stocks = temp_capital // (buy_price * (1 + commission_rate))
                                             capital -= num_stocks * buy_price * (1 + commission_rate)
                                             bought_ticker[ticker] = {}
                                             bought_ticker[ticker]["num_stocks"] = num_stocks
                                             bought_ticker[ticker]["buy_price"] = buy_price
-                                            # print(bought_ticker)
                                             bought_today = True
+
                                             # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
                                             
                                             # print(f"{ticker}: Target Approach at {idx}")
@@ -141,7 +141,6 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
 
                                             if ticker == target_cnt[0]:
                                                 buy_price = (1 + margin) * opening_price[ticker]
-                                                # temp_capital = previous_capital // (len(target_cnt)+1)
                                                 temp_capital = capital / 2
                                                 num_stocks = temp_capital // (buy_price * (1 + commission_rate))
                                                 capital -= num_stocks * buy_price * (1 + commission_rate)
@@ -151,7 +150,6 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
                                                     bought_ticker[ticker]["buy_price"] = buy_price
                                                 else:
                                                     bought_ticker[ticker]["num_stocks"] += num_stocks
-                                                # print(bought_ticker)
                                                 bought_today = True
                                                 # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
                                             
@@ -216,7 +214,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
     return accumulated_return
 
 
-tickers = ('SOXL', 'SOXS')
+# tickers = ('SOXL', 'SOXS')
 # tickers = ('TECL', 'TECS')
 
 # tickers = ('LABU', 'LABD')
@@ -225,7 +223,7 @@ tickers = ('SOXL', 'SOXS')
 
 # tickers = ('UMDD', 'SMDD')
 
-dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
+# dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
 
 
 
@@ -239,7 +237,7 @@ whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),("HIBL","HIBS"),("TECL","TECS")
 # whole_tickers = [("QQQ","PSQ"),]
 
 for tickers in whole_tickers:
-    dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
+    dir_path = f"./02_DATA/3x/{tickers[0]}"
     for year in years:
         start_month = f"{year}-01"
         end_month = f"{year}-12"
@@ -254,11 +252,11 @@ for tickers in whole_tickers:
 
             month = input_month
             initial_capital = 10000
-            margin = 0.01
+            margin = 0.003
             margin2 = 0.05
             stop_loss = 0.05
             stop_loss2 = 0.05
-            commission_rate = 0.000
+            commission_rate = 0.001
             # commission_rate = 0.001*rate/5
             holding_time = datetime.time(10, 30, 00)
             closing_time = datetime.time(15, 55, 00)

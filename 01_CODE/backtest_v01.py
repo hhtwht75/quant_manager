@@ -157,64 +157,58 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
     return accumulated_return
 
 
-# tickers = ('SOXL', 'SOXS')
-tickers = ('LABU', 'LABD')
-# tickers = ('LABU', 'LABD')
-# tickers = ('TQQQ',)
-# tickers = ('UMDD', 'SMDD')
-
-# tickers = ('WEBL',)
-
-dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
-
-
-
 years = []
-for i in range (2017,2024,1):
+for i in range (2019,2024,1):
     years.append(f"{i}")
 # years = ["2020", "2021", "2023"]
-# years = ["2023"]
+# years = ["2019"]
+whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),("HIBL","HIBS"),("TECL","TECS"),("TQQQ","SQQQ"),("WEBL","WEBS"),("UMDD","SMDD"),("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
+# whole_tickers = [("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
+# whole_tickers = [("QQQ","PSQ"),]
 
-        
-for year in years:
-    start_month = f"{year}-01"
-    end_month = f"{year}-12"
-    start_month_pd = pd.to_datetime(start_month)
-    end_month_pd = pd.to_datetime(end_month)
-    sim_result = {}
+for tickers in whole_tickers:
+    dir_path = f"./02_DATA/direxion_3x/{tickers[0]}"
+    for year in years:
+        start_month = f"{year}-01"
+        end_month = f"{year}-12"
+        start_month_pd = pd.to_datetime(start_month)
+        end_month_pd = pd.to_datetime(end_month)
+        sim_result = {}
 
-    current = start_month_pd
-    while current <= end_month_pd:
+        current = start_month_pd
+        while current <= end_month_pd:
 
-        input_month = current.strftime("%Y-%m")
+            input_month = current.strftime("%Y-%m")
 
-        month = input_month
-        initial_capital = 10000
-        margin = 0.01
-        margin2 = 0.05
-        stop_loss = 0.05
-        stop_loss2 = 0.05
-        commission_rate = 0.001
-        # commission_rate = 0.001*rate/5
-        holding_time = datetime.time(10, 30, 00)
-        closing_time = datetime.time(15, 55, 00)
-        
-        # stock_data = fetch_stock_data(f"./02_DATA/stock_data_{year}.csv",tickers, month)
-        stock_data = fetch_stock_data(f"{dir_path}/{tickers[0]}_{year}.csv",tickers, month)
-        sim_result[input_month] = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, stop_loss2, commission_rate, holding_time, closing_time)
-        # print(input_month, accumulated_return)
+            month = input_month
+            initial_capital = 10000
+            margin = 0.005
+            margin2 = 0.05
+            stop_loss = 0.05
+            stop_loss2 = 0.05
+            commission_rate = 0.001
+            # commission_rate = 0.001*rate/5
+            holding_time = datetime.time(10, 30, 00)
+            closing_time = datetime.time(15, 55, 00)
+            
+            # stock_data = fetch_stock_data(f"./02_DATA/stock_data_{year}.csv",tickers, month)
+            stock_data = fetch_stock_data(f"{dir_path}/{tickers[0]}_{year}.csv",tickers, month)
+            sim_result[input_month] = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, stop_loss2, commission_rate, holding_time, closing_time)
+            # print(input_month, accumulated_return)
 
-        current += pd.DateOffset(months=1)
+            current += pd.DateOffset(months=1)
 
-    total_return = 1
+        total_return = 1
 
-    for date, result in sim_result.items():
-        total_return = total_return * (1+(result/100))
-        # print(date, result, total_return)
+        for date, result in sim_result.items():
+            total_return = total_return * (1+(result/100))
+            # print(date, result, total_return)
 
-    if total_return > 1.025:
-        total_return = ((total_return*10000 - 10250)*0.78 + 10250)/10000 # TAX
-    print(f"Total Return of {tickers} at {year}: ", total_return)
+        if total_return > 1.025:
+            total_return = ((total_return*10000 - 10250)*0.78 + 10250)/10000 # TAX
+        print(f"Total Return of {tickers} at {year}: ", total_return)
+
+    print("===========================")
 
 # for year in years:
 
