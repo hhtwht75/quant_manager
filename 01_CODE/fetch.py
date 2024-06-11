@@ -95,4 +95,4 @@ def fetch_alpha_year(input_filename,tickers):
             print(f"Error fetching data for {ticker}: {e}")
     return df
 
-stock_data = fetch_stock_data(f"./02_DATA/stock_data_2019.csv",("SOXL",), "2019-01")
+# stock_data = fetch_stock_data(f"./02_DATA/stock_data_2019.csv",("SOXL",), "2019-01")

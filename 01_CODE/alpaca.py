@@ -71,7 +71,7 @@ def get_stock_data(symbols, year):
 
     nyse_calendar = ecals.get_calendar("XNYS")
     start_date = f"{year}-01-01"
-    end_date = f"{year}-12-31"
+    end_date = f"{year}-04-08"
     
     all_data = []
         
@@ -100,15 +100,15 @@ def get_stock_data(symbols, year):
             continue
 
     final_df = pd.concat(all_data)
-    final_df.to_csv(f"./02_DATA/1x/{symbols[0]}/{symbols[0]}_{year}.csv")
+    final_df.to_csv(f"./02_DATA/3x/{symbols[0]}/{symbols[0]}_{year}.csv")
     print(f"{symbols[0]}_{year}.csv is saved")
 
-for year in range(2019,2024):
-    get_stock_data(("NVDA","NVDD"),year)
+# for year in range(2019,2024):
+#     get_stock_data(("NVDA","NVDD"),year)
 
-whole_tickers = [("TSLA","TSLS")]
+whole_tickers = [("SOXL","SOXS")]
 for tickers in whole_tickers:
-    for year in range(2016,2024):
+    for year in range(2024,2025):
         get_stock_data(tickers,year)
 
 
