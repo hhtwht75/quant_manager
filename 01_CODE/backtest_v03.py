@@ -101,8 +101,9 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
                         else:
                             if candidate:
                                 if ticker in candidate and not bought_today:
+                                    # if stock_data[ticker].loc[idx, "High"] >= opening_price[ticker]:
                                     if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
-                                        buy_price = (1 + margin) * opening_price[ticker]
+                                        buy_price = opening_price[ticker]
                                         num_stocks = capital // (buy_price * (1 + commission_rate))
                                         capital -= num_stocks * buy_price * (1 + commission_rate)
                                         bought_ticker[ticker] = {}
@@ -231,10 +232,10 @@ years = []
 for i in range (2019,2024,1):
     years.append(f"{i}")
 # years = ["2020", "2021", "2023"]
-# years = ["2019"]
-whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),("HIBL","HIBS"),("TECL","TECS"),("TQQQ","SQQQ"),("WEBL","WEBS"),("UMDD","SMDD"),("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
+years = ["2024"]
+# whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),("HIBL","HIBS"),("TECL","TECS"),("TQQQ","SQQQ"),("WEBL","WEBS"),("UMDD","SMDD"),("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
 # whole_tickers = [("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
-# whole_tickers = [("QQQ","PSQ"),]
+whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),]
 
 for tickers in whole_tickers:
     dir_path = f"./02_DATA/3x/{tickers[0]}"
@@ -252,11 +253,11 @@ for tickers in whole_tickers:
 
             month = input_month
             initial_capital = 10000
-            margin = 0.003
+            margin = 0.001
             margin2 = 0.05
             stop_loss = 0.05
             stop_loss2 = 0.05
-            commission_rate = 0.001
+            commission_rate = 0.000
             # commission_rate = 0.001*rate/5
             holding_time = datetime.time(10, 30, 00)
             closing_time = datetime.time(15, 55, 00)
@@ -272,7 +273,7 @@ for tickers in whole_tickers:
 
         for date, result in sim_result.items():
             total_return = total_return * (1+(result/100))
-            # print(date, result, total_return)
+            print(date, result, total_return)
 
         if total_return > 1.025:
             total_return = ((total_return*10000 - 10250)*0.78 + 10250)/10000 # TAX
