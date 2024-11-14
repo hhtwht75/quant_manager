@@ -135,26 +135,26 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
                                 
                                     elif ticker != target_cnt[-1]:
                                         
-                                        if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker]:
+                                        if stock_data[ticker].loc[idx, "High"] >= (1 + margin) * opening_price[ticker] and ticker == target_cnt[0]:
                                             
                                             # print(f"{ticker}: Target Approach at {idx}")
                                             target_cnt.append(ticker)
-
-                                            if ticker == target_cnt[0]:
-                                                buy_price = (1 + margin) * opening_price[ticker]
-                                                temp_capital = capital / 2
-                                                num_stocks = temp_capital // (buy_price * (1 + commission_rate))
-                                                capital -= num_stocks * buy_price * (1 + commission_rate)
-                                                if not bought_ticker:
-                                                    bought_ticker[ticker] = {}
-                                                    bought_ticker[ticker]["num_stocks"] = num_stocks
-                                                    bought_ticker[ticker]["buy_price"] = buy_price
-                                                else:
-                                                    bought_ticker[ticker]["num_stocks"] += num_stocks
-                                                bought_today = True
-                                                # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
+                                            buy_price = (1 + margin) * opening_price[ticker]
+                                            temp_capital = capital / 2
+                                            num_stocks = temp_capital // (buy_price * (1 + commission_rate))
+                                            capital -= num_stocks * buy_price * (1 + commission_rate)
+                                            if not bought_ticker:
+                                                bought_ticker[ticker] = {}
+                                                bought_ticker[ticker]["num_stocks"] = num_stocks
+                                                bought_ticker[ticker]["buy_price"] = buy_price
+                                            else:
+                                                bought_ticker[ticker]["num_stocks"] += num_stocks
+                                            bought_today = True
+                                            # print(f"Bought {num_stocks} of {ticker} at ${buy_price:.2f} on {idx}")
+                                        
+                                        elif stock_data[ticker].loc[idx, "High"] >= (1 + margin2) * opening_price[ticker] and ticker != target_cnt[0]:
+                                            target_cnt.append(ticker)
                                             
-                                            # print(target_cnt)
                                                     
                                                     # break
 
@@ -235,10 +235,12 @@ for i in range (2019,2024,1):
 years = ["2024"]
 # whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),("HIBL","HIBS"),("TECL","TECS"),("TQQQ","SQQQ"),("WEBL","WEBS"),("UMDD","SMDD"),("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
 # whole_tickers = [("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
-whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),]
+# whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),]
+whole_tickers = [("SOXS","SOXL"),("LABD","LABU"),]
 
 for tickers in whole_tickers:
-    dir_path = f"./02_DATA/3x/{tickers[0]}"
+    ticker_order = tickers[1]
+    dir_path = f"./02_DATA/3x/{ticker_order}"
     for year in years:
         start_month = f"{year}-01"
         end_month = f"{year}-12"
@@ -254,7 +256,7 @@ for tickers in whole_tickers:
             month = input_month
             initial_capital = 10000
             margin = 0.001
-            margin2 = 0.05
+            margin2 = 0.005
             stop_loss = 0.05
             stop_loss2 = 0.05
             commission_rate = 0.000
@@ -263,7 +265,7 @@ for tickers in whole_tickers:
             closing_time = datetime.time(15, 55, 00)
             
             # stock_data = fetch_stock_data(f"./02_DATA/stock_data_{year}.csv",tickers, month)
-            stock_data = fetch_stock_data(f"{dir_path}/{tickers[0]}_{year}.csv",tickers, month)
+            stock_data = fetch_stock_data(f"{dir_path}/{ticker_order}_{year}.csv",tickers, month)
             sim_result[input_month] = backtest_strategy(tickers, stock_data, initial_capital, margin, stop_loss, stop_loss2, commission_rate, holding_time, closing_time)
             # print(input_month, accumulated_return)
 
