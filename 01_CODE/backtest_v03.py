@@ -67,7 +67,7 @@ def backtest_strategy(tickers, stock_data, initial_capital=10000000000000, margi
 
                 for ticker in tickers:   
                     if prev1_open and prev1_close:
-                        if prev1_open[ticker] > prev1_close[ticker] and prev1_close[ticker] < opening_price[ticker]:
+                        if prev1_open[ticker] > prev1_close[ticker] and 1.01*prev1_close[ticker] < opening_price[ticker]:
                         # if prev1_close[ticker] < opening_price[ticker]:
                             candidate.append(ticker)
                 # print(f"     ")
@@ -235,11 +235,11 @@ for i in range (2019,2024,1):
 years = ["2024"]
 # whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),("HIBL","HIBS"),("TECL","TECS"),("TQQQ","SQQQ"),("WEBL","WEBS"),("UMDD","SMDD"),("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
 # whole_tickers = [("DRN","DRV"),("FAS","FAZ"),("SPXL","SPXS"),("TMF","TMV"),("YINN","YANG")]
-# whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),]
-whole_tickers = [("SOXS","SOXL"),("LABD","LABU"),]
+whole_tickers = [("SOXL","SOXS"),("LABU","LABD"),]
+# whole_tickers = [("SOXS","SOXL"),("LABD","LABU"),]
 
 for tickers in whole_tickers:
-    ticker_order = tickers[1]
+    ticker_order = tickers[0]
     dir_path = f"./02_DATA/3x/{ticker_order}"
     for year in years:
         start_month = f"{year}-01"

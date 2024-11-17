@@ -71,7 +71,7 @@ def get_stock_data(symbols, year):
 
     nyse_calendar = ecals.get_calendar("XNYS")
     start_date = f"{year}-01-01"
-    end_date = f"{year}-11-13"
+    end_date = f"{year}-11-16"
     
     all_data = []
         
