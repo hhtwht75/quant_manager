@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "strategy": "merge_bounce_simple_mc_sticky_defense (no DEF→BOUNCE; DEF exits only rule4→SAFE)",
+    "sig": "QQQ",
+    "bounce": "TQQQ",
+    "defense": "QQQ",
+    "safe": "GOLD",
+    "gold_series_note": "GC=F (COMEX) from 2000-08-30; preceding dates use ^XAU anchored to first GC=F close (approx. pre-contract Yahoo window — not TradingView GC1!)",
+    "index_days": 6809,
+    "trail": 0.85,
+    "mc_years": 3.0,
+    "mc_min_days": 756,
+    "mc_iters": 10,
+    "mc_seed": 42
+  },
+  "mc_sortino": {
+    "mean": 1.1179738894669753,
+    "std": 0.5465802343721569,
+    "median": 1.2962363143295288
+  }
+}

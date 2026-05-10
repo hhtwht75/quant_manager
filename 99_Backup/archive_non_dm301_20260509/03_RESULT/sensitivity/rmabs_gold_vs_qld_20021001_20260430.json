@@ -1,0 +1,396 @@
+{
+  "gold_source": "GC=F (COMEX Gold Continuous Contract)",
+  "root": "2002-10-01",
+  "common_period": [
+    "2002-10-01",
+    "2026-04-30"
+  ],
+  "n_days": 5918,
+  "capital": 100000.0,
+  "warmup_hold_cash": true,
+  "rma_bs_qld_defqqq_metrics": {
+    "cagr": 0.23224017394565233,
+    "sharpe": 0.6668538631102344,
+    "sortino": 0.8620515440784625,
+    "mdd": -0.6508638267081744,
+    "ulcer": 19.731321952074268,
+    "avg_dd": -0.1422433422153373,
+    "calmar": 0.3584728518986492,
+    "pain_ratio": 1.6402666622142277,
+    "upi": 0.9797468848123726,
+    "var95": -0.036025931265392885,
+    "cvar95": -0.052952655065876444,
+    "n_years": 23.578370978781656,
+    "total_return": 136.54630614585346
+  },
+  "rmabs_gold_metrics": {
+    "cagr": 0.2088508623502099,
+    "sharpe": 0.6239695125074687,
+    "sortino": 0.7910179909401661,
+    "mdd": -0.5732497190322299,
+    "ulcer": 21.08963445377896,
+    "avg_dd": -0.16546417532128616,
+    "calmar": 0.3660015441052195,
+    "pain_ratio": 1.2680103225745707,
+    "upi": 0.8051836208723466,
+    "var95": -0.03428857036449868,
+    "cvar95": -0.05148812996867886,
+    "n_years": 23.578370978781656,
+    "total_return": 86.54163629967958
+  },
+  "events_counts": {
+    "RMABS": 64,
+    "RMABSG": 64
+  },
+  "divergence_episodes": {
+    "window_trading_days": 252,
+    "min_gap_trading_between": 126,
+    "k_requested": 8,
+    "episodes": [
+      {
+        "start": "2006-07-14",
+        "end": "2007-07-18",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": -0.3102749903622431,
+        "period_return_RM_abs_QLD_defqqq_pct": 64.22952011587589,
+        "period_return_RM_abs_GOLD_pct": 20.420522614530334,
+        "spread_gold_minus_qld_pp": -43.808997501345544,
+        "events_RMABS": [
+          {
+            "Date": "2006-10-04",
+            "type": "RMABS_TO_TQQQ",
+            "value": 120286.00106844696
+          },
+          {
+            "Date": "2007-02-27",
+            "type": "RMABS_EXIT_TRAIL",
+            "value": 128919.55812340845
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2006-10-04",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 82731.31564878213
+          },
+          {
+            "Date": "2007-02-27",
+            "type": "RMABSG_EXIT_TRAIL",
+            "value": 88669.37600111977
+          }
+        ]
+      },
+      {
+        "start": "2008-08-15",
+        "end": "2009-08-17",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": 0.4511906548192254,
+        "period_return_RM_abs_QLD_defqqq_pct": -13.473106479082054,
+        "period_return_RM_abs_GOLD_pct": 35.86285097435249,
+        "spread_gold_minus_qld_pp": 49.335957453434546,
+        "events_RMABS": [
+          {
+            "Date": "2009-05-04",
+            "type": "RMABS_TO_TQQQ",
+            "value": 96239.78935276518
+          },
+          {
+            "Date": "2009-05-05",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 95928.60812055077
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2009-05-04",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 79656.56387121942
+          },
+          {
+            "Date": "2009-05-05",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 79399.00275365968
+          }
+        ]
+      },
+      {
+        "start": "2010-02-18",
+        "end": "2011-02-16",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": -0.20854087787723133,
+        "period_return_RM_abs_QLD_defqqq_pct": 25.58167716661408,
+        "period_return_RM_abs_GOLD_pct": 1.9431681580508675,
+        "spread_gold_minus_qld_pp": -23.63850900856321,
+        "events_RMABS": [
+          {
+            "Date": "2010-05-10",
+            "type": "RMABS_TO_TQQQ",
+            "value": 171454.9705821283
+          },
+          {
+            "Date": "2010-05-11",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 171341.8027083825
+          },
+          {
+            "Date": "2010-06-29",
+            "type": "RMABS_QLD_TO_QQQ_MA_DOWN",
+            "value": 140536.3488257732
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2010-05-10",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 141911.302041113
+          },
+          {
+            "Date": "2010-05-11",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 141817.63429699358
+          },
+          {
+            "Date": "2010-06-29",
+            "type": "RMABSG_QLD_TO_GLD_MA_DOWN",
+            "value": 116320.31534726678
+          }
+        ]
+      },
+      {
+        "start": "2011-08-22",
+        "end": "2012-08-21",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": -0.46583991750853204,
+        "period_return_RM_abs_QLD_defqqq_pct": 35.050653781763245,
+        "period_return_RM_abs_GOLD_pct": -15.241163716876049,
+        "spread_gold_minus_qld_pp": -50.29181749863929,
+        "events_RMABS": [
+          {
+            "Date": "2011-10-14",
+            "type": "RMABS_TO_TQQQ",
+            "value": 190387.73006599682
+          },
+          {
+            "Date": "2011-10-17",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 181574.63580215097
+          },
+          {
+            "Date": "2011-11-21",
+            "type": "RMABS_QLD_TO_QQQ_MA_DOWN",
+            "value": 162001.10646230678
+          },
+          {
+            "Date": "2012-05-21",
+            "type": "RMABS_TO_TQQQ",
+            "value": 187388.6119352625
+          },
+          {
+            "Date": "2012-05-22",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 186705.8641414633
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2011-10-14",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 157510.07409882138
+          },
+          {
+            "Date": "2011-10-17",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 150218.89451462726
+          },
+          {
+            "Date": "2011-11-21",
+            "type": "RMABSG_QLD_TO_GLD_MA_DOWN",
+            "value": 134025.47671598237
+          },
+          {
+            "Date": "2012-05-21",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 126846.25173932439
+          },
+          {
+            "Date": "2012-05-22",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 126384.08919042499
+          }
+        ]
+      },
+      {
+        "start": "2016-02-11",
+        "end": "2017-02-14",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": -0.21751257770511973,
+        "period_return_RM_abs_QLD_defqqq_pct": 60.494433752758006,
+        "period_return_RM_abs_GOLD_pct": 29.120578339297754,
+        "spread_gold_minus_qld_pp": -31.373855413460248,
+        "events_RMABS": [
+          {
+            "Date": "2016-04-06",
+            "type": "RMABS_TO_TQQQ",
+            "value": 487286.93657291005
+          },
+          {
+            "Date": "2016-04-07",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 466251.6831664752
+          },
+          {
+            "Date": "2016-06-27",
+            "type": "RMABS_QLD_TO_QQQ_MA_DOWN",
+            "value": 409604.19920549286
+          },
+          {
+            "Date": "2016-07-11",
+            "type": "RMABS_TO_TQQQ",
+            "value": 444505.9705322836
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2016-04-06",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 285139.4894487877
+          },
+          {
+            "Date": "2016-04-07",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 272830.5581671069
+          },
+          {
+            "Date": "2016-06-27",
+            "type": "RMABSG_QLD_TO_GLD_MA_DOWN",
+            "value": 239682.87157244253
+          },
+          {
+            "Date": "2016-07-11",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 245572.9988511604
+          }
+        ]
+      },
+      {
+        "start": "2018-12-24",
+        "end": "2019-12-24",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": -0.19071145142374923,
+        "period_return_RM_abs_QLD_defqqq_pct": 68.61557468721142,
+        "period_return_RM_abs_GOLD_pct": 39.33902139504146,
+        "spread_gold_minus_qld_pp": -29.27655329216996,
+        "events_RMABS": [
+          {
+            "Date": "2019-03-15",
+            "type": "RMABS_TO_TQQQ",
+            "value": 1340134.6363834802
+          },
+          {
+            "Date": "2019-03-27",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 1334309.5161549954
+          },
+          {
+            "Date": "2019-06-07",
+            "type": "RMABS_TO_TQQQ",
+            "value": 1360614.4087083018
+          },
+          {
+            "Date": "2019-08-05",
+            "type": "RMABS_EXIT_BELOW_COST",
+            "value": 1338086.9221907468
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2019-03-15",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 725658.284610185
+          },
+          {
+            "Date": "2019-03-27",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 722504.0890257341
+          },
+          {
+            "Date": "2019-06-07",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 736747.705069119
+          },
+          {
+            "Date": "2019-08-05",
+            "type": "RMABSG_EXIT_BELOW_COST",
+            "value": 724549.4849954828
+          }
+        ]
+      },
+      {
+        "start": "2022-01-04",
+        "end": "2023-01-05",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": 0.29030382387516923,
+        "period_return_RM_abs_QLD_defqqq_pct": -41.40706902167792,
+        "period_return_RM_abs_GOLD_pct": -21.6710018316971,
+        "spread_gold_minus_qld_pp": 19.736067189980822,
+        "events_RMABS": [
+          {
+            "Date": "2022-01-21",
+            "type": "RMABS_QLD_TO_QQQ_MA_DOWN",
+            "value": 3519494.2413958074
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2022-01-21",
+            "type": "RMABSG_QLD_TO_GLD_MA_DOWN",
+            "value": 1759299.5603450905
+          }
+        ]
+      },
+      {
+        "start": "2024-04-17",
+        "end": "2025-04-21",
+        "days": 252,
+        "delta_ln_nav_ratio_gold_over_qld": 0.2500374409619539,
+        "period_return_RM_abs_QLD_defqqq_pct": 15.646898470711413,
+        "period_return_RM_abs_GOLD_pct": 48.499116843200426,
+        "spread_gold_minus_qld_pp": 32.85221837248902,
+        "events_RMABS": [
+          {
+            "Date": "2024-04-22",
+            "type": "RMABS_TO_TQQQ",
+            "value": 5307742.706951128
+          },
+          {
+            "Date": "2024-07-19",
+            "type": "RMABS_EXIT_TRAIL",
+            "value": 7435402.205686276
+          },
+          {
+            "Date": "2025-03-10",
+            "type": "RMABS_QLD_TO_QQQ_MA_DOWN",
+            "value": 6926690.964787959
+          }
+        ],
+        "events_RMABSG": [
+          {
+            "Date": "2024-04-22",
+            "type": "RMABSG_TO_TQQQ",
+            "value": 3239465.9281620677
+          },
+          {
+            "Date": "2024-07-19",
+            "type": "RMABSG_EXIT_TRAIL",
+            "value": 4538036.871296964
+          },
+          {
+            "Date": "2025-03-10",
+            "type": "RMABSG_QLD_TO_GLD_MA_DOWN",
+            "value": 4227555.9713835325
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "strategy": "merge_bounce_simple_mc_sticky_defense (no DEF→BOUNCE; SAFE/BOUNCE 103MA는 상향돌파만; DEF는 규칙4→SAFE만)",
+    "sig": "QQQ",
+    "bounce": "TQQQ",
+    "defense": "QQQ",
+    "safe": "GOLD",
+    "gold_series_note": "GC=F (COMEX) from 2000-08-30; preceding dates use ^XAU anchored to first GC=F close (approx. pre-contract Yahoo window — not TradingView GC1!)",
+    "index_days": 6809,
+    "trail": 0.85,
+    "mc_years": 3.0,
+    "mc_min_days": 756,
+    "mc_iters": 3000,
+    "mc_seed": 42
+  },
+  "mc_sortino": {
+    "mean": 1.1872321854055325,
+    "std": 0.40695586719696086,
+    "median": 1.2569763958927185
+  }
+}

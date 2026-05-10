@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "sig_asset": "QQQ",
+    "def_scenarios_run": [
+      "QQQ",
+      "GC=F (COMEX Gold Continuous Contract)",
+      "방어 상태 가격종가 상수 1.0 USD(단위)·일중 변동 없음·이자·인플레 없음(FSM 규격상 현금)"
+    ],
+    "nor_asset": "QLD",
+    "agg_asset": "TQQQ",
+    "common_trading_days": 5918,
+    "first_date": "2002-10-01",
+    "last_date": "2026-04-30",
+    "--root_gate": "2002-10-01",
+    "trail_stop": 0.85,
+    "initial_capital": 100000.0,
+    "ma200_cache": "/Users/vincent/Library/CloudStorage/Dropbox/Do_Money/quant_manager/02_DATA/cache/ma200/QQQ_200_ce592c835bfc2ba1_ma.csv",
+    "gold_price_source_note": "GC=F (COMEX Gold Continuous Contract)",
+    "def_flat_cash_model_note": "방어 상태 가격종가 상수 1.0 USD(단위)·일중 변동 없음·이자·인플레 없음(FSM 규격상 현금)",
+    "rmabs_comparison_note": "신호=QQQ 종가(RSI·MA200). RMABS-QLD: 규칙0·청산 후 QQQ 전환 포함—`strategy_rsi_ma_based_switching`. RMABS-QQQ: 시그널·방어 모두 QQQ—`strategy_rsi_ma_based_switching_qqq_only`. warmup_hold_cash=False (첫일부터 종가 매수 규격)."
+  },
+  "strategy_def_qqq_metrics": {
+    "cagr": 0.2738892976490124,
+    "mdd": -0.6508638267081746,
+    "sharpe": 0.7454046898842163,
+    "sortino": 0.9971702563635796,
+    "ulcer": 19.868814804791675,
+    "total_return": 300.1854338882564
+  },
+  "strategy_def_gold_metrics": {
+    "cagr": 0.23618253727414062,
+    "mdd": -0.5742926284572629,
+    "sharpe": 0.6774089030087355,
+    "sortino": 0.8827924066001207,
+    "ulcer": 20.641738976223632,
+    "total_return": 147.30568704186288
+  },
+  "strategy_def_cash_flat_metrics": {
+    "cagr": 0.2202153483843352,
+    "mdd": -0.5020995770533684,
+    "sharpe": 0.6553596480262734,
+    "sortino": 0.8228017783837476,
+    "ulcer": 19.90058416003807,
+    "total_return": 108.15194337312043
+  },
+  "rmabs_qld_metrics": {
+    "cagr": 0.2508191134188451,
+    "mdd": -0.6508638267081746,
+    "sharpe": 0.7054746058204602,
+    "sortino": 0.9298298179279759,
+    "ulcer": 19.772664890858284,
+    "total_return": 194.7438784946433
+  },
+  "rmabs_qqq_metrics": {
+    "cagr": 0.21918134591916294,
+    "mdd": -0.5405557968835367,
+    "sharpe": 0.747373567757127,
+    "sortino": 0.9702272927856653,
+    "ulcer": 13.850767275617892,
+    "total_return": 105.99180690608658
+  },
+  "rmabs_event_counts": {
+    "RMABS_QLD": 64,
+    "RMABS_QQQ": 47
+  },
+  "delta_defGold_minus_defQQQ": {
+    "cagr": -0.03770676037487175,
+    "mdd": 0.07657119825091163,
+    "sharpe": -0.0679957868754808,
+    "sortino": -0.11437784976345888,
+    "ulcer": 0.7729241714319564,
+    "total_return": -152.87974684639352
+  },
+  "delta_defCash_minus_defQQQ": {
+    "cagr": -0.05367394926467717,
+    "mdd": 0.14876424965480617,
+    "sharpe": -0.09004504185794282,
+    "sortino": -0.17436847797983202,
+    "ulcer": 0.031769355246392905,
+    "total_return": -192.03349051513595
+  },
+  "delta_defCash_minus_defGold": {
+    "cagr": -0.015967188889805417,
+    "mdd": 0.07219305140389454,
+    "sharpe": -0.02204925498246202,
+    "sortino": -0.05999062821637313,
+    "ulcer": -0.7411548161855634,
+    "total_return": -39.15374366874245
+  }
+}

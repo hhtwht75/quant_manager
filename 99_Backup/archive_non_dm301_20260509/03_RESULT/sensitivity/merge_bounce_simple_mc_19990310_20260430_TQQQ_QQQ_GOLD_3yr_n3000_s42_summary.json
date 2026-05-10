@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "strategy": "merge_bounce_simple_mc (DMABS MA5>M120; DEF→Bounce 동조건; SAFE/BOUNCE 103MA는 상향돌파만)",
+    "sig": "QQQ",
+    "bounce": "TQQQ",
+    "defense": "QQQ",
+    "safe": "GOLD",
+    "gold_series_note": "GC=F (COMEX) from 2000-08-30; preceding dates use ^XAU anchored to first GC=F close (approx. pre-contract Yahoo window — not TradingView GC1!)",
+    "index_days": 6809,
+    "trail": 0.85,
+    "mc_years": 3.0,
+    "mc_min_days": 756,
+    "mc_iters": 3000,
+    "mc_seed": 42
+  },
+  "mc_sortino": {
+    "mean": 1.2128029859487197,
+    "std": 0.5206647029911915,
+    "median": 1.235495374246268
+  }
+}

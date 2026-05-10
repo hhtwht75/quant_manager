@@ -1,0 +1,10 @@
+{
+  "sig_ticker": "QQQ",
+  "window": 200,
+  "full_data_sha256": "ce592c835bfc2ba17edde7f22dd338041be7beff13acda9bcf440c3a41249ea7",
+  "sha_key_suffix16": "ce592c835bfc2ba1",
+  "parameter_ma_window": 200,
+  "n_rows": 6828,
+  "first_date": "1999-03-10",
+  "last_date": "2026-04-30"
+}

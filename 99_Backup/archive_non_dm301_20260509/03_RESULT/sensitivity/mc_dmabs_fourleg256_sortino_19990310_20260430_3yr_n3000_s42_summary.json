@@ -1,0 +1,2884 @@
+{
+  "meta": {
+    "description": "256 combos: agg,bounce,defense,safe ∈ {TQQQ,QLD,QQQ,Gold}^4 · Close_sig always QQQ · DMABS MA5>M120 · sortino_mean from random windows",
+    "gold_series": "GC=F (COMEX) from 2000-08-30; preceding dates use ^XAU anchored to first GC=F close (approx. pre-contract Yahoo window — not TradingView GC1!)",
+    "ma200_csv": "/Users/vincent/Library/CloudStorage/Dropbox/Do_Money/quant_manager/02_DATA/cache/ma200/QQQ_200_ce592c835bfc2ba1_ma.csv",
+    "--root": "1999-03-10",
+    "index_first_last_days": {
+      "first": "1999-03-10",
+      "last": "2026-04-30",
+      "days": 6809
+    },
+    "trail": 0.85,
+    "mc_years": 3.0,
+    "mc_min_trading_days": 756,
+    "mc_iters": 3000,
+    "mc_seed": 42
+  },
+  "sortino_sorted_desc": [
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1868194606160416,
+      "sortino_median": 1.2569763958927198,
+      "sortino_std": 0.4078446781954902,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1621426484899025,
+      "sortino_median": 1.2045900823350428,
+      "sortino_std": 0.3014551112404674,
+      "combo_id": "aggGold_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1471914204787943,
+      "sortino_median": 1.2229658888875177,
+      "sortino_std": 0.407724787376617,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.136880338118569,
+      "sortino_median": 1.1350128728808593,
+      "sortino_std": 0.4115535985254677,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.135212090258374,
+      "sortino_median": 1.1724395467017794,
+      "sortino_std": 0.2951138796391101,
+      "combo_id": "aggGold_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1232339117810926,
+      "sortino_median": 1.1689614629757004,
+      "sortino_std": 0.4103666023752499,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.1021226264056303,
+      "sortino_median": 1.1050273132043555,
+      "sortino_std": 0.41533098840511146,
+      "combo_id": "aggTQQQ_bounceQLD_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0845685253438209,
+      "sortino_median": 1.159733078393773,
+      "sortino_std": 0.4124081812797293,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0806174744876262,
+      "sortino_median": 1.1258801244580963,
+      "sortino_std": 0.4075712947382082,
+      "combo_id": "aggQLD_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.077775583760526,
+      "sortino_median": 1.0556736176414399,
+      "sortino_std": 0.40767575338937745,
+      "combo_id": "aggQLD_bounceTQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0774385893763878,
+      "sortino_median": 1.1175147981580986,
+      "sortino_std": 0.3601215520468402,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0741155633612538,
+      "sortino_median": 1.097427714046761,
+      "sortino_std": 0.29693134194261905,
+      "combo_id": "aggGold_bounceQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0658643308414215,
+      "sortino_median": 1.0848444833606774,
+      "sortino_std": 0.42247748542847613,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0586877454895873,
+      "sortino_median": 1.0956266403714419,
+      "sortino_std": 0.28336283511963145,
+      "combo_id": "aggGold_bounceTQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 1.0528831972795176,
+      "sortino_median": 1.0963374462766695,
+      "sortino_std": 0.4231221188852217,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.0423723452716323,
+      "sortino_median": 1.0257138169946678,
+      "sortino_std": 0.4121041521536846,
+      "combo_id": "aggQLD_bounceQLD_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.041455941375026,
+      "sortino_median": 1.0454089251572292,
+      "sortino_std": 0.41691575019244703,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0358527491142044,
+      "sortino_median": 1.0769474011551834,
+      "sortino_std": 0.3640501526098344,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 1.03275925161283,
+      "sortino_median": 1.0867245464402364,
+      "sortino_std": 0.37107374224519346,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0225943330273513,
+      "sortino_median": 1.0527579919659946,
+      "sortino_std": 0.2881503257152527,
+      "combo_id": "aggGold_bounceQLD_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0203749041776142,
+      "sortino_median": 1.039759443893154,
+      "sortino_std": 0.41947118521346116,
+      "combo_id": "aggQQQ_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0120736558522245,
+      "sortino_median": 1.0599751208326667,
+      "sortino_std": 0.41065831581144,
+      "combo_id": "aggQLD_bounceQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 1.0084662310244443,
+      "sortino_median": 1.053533423424586,
+      "sortino_std": 0.4305678667320506,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 1.0026644300876193,
+      "sortino_median": 1.0406075868025506,
+      "sortino_std": 0.31456752463809795,
+      "combo_id": "aggGold_bounceTQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9996934059285865,
+      "sortino_median": 1.0244482681285096,
+      "sortino_std": 0.349936261835869,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.990018720457669,
+      "sortino_median": 1.0474063768271535,
+      "sortino_std": 0.3787146396806826,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.988099329326916,
+      "sortino_median": 1.0240615533683788,
+      "sortino_std": 0.2834948714991713,
+      "combo_id": "aggGold_bounceTQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.9855295309990799,
+      "sortino_median": 1.039522971837477,
+      "sortino_std": 0.4365796776673212,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9834498042718601,
+      "sortino_median": 1.0269514453253157,
+      "sortino_std": 0.37077407249268496,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9793808548525886,
+      "sortino_median": 1.0092242229943742,
+      "sortino_std": 0.3334848184792291,
+      "combo_id": "aggGold_bounceTQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.97701750406813,
+      "sortino_median": 0.9620676374985689,
+      "sortino_std": 0.413753317486764,
+      "combo_id": "aggQLD_bounceQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9698865153062367,
+      "sortino_median": 0.9978712522623081,
+      "sortino_std": 0.2955088481703506,
+      "combo_id": "aggGold_bounceQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9692297544919132,
+      "sortino_median": 0.9894982345773156,
+      "sortino_std": 0.39169313921688287,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9676496706660125,
+      "sortino_median": 1.009182904222965,
+      "sortino_std": 0.30633188910200454,
+      "combo_id": "aggGold_bounceTQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9650404726228953,
+      "sortino_median": 0.9868726063570972,
+      "sortino_std": 0.3223607434156013,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.96357521689983,
+      "sortino_median": 0.9992721422702283,
+      "sortino_std": 0.32682376509490507,
+      "combo_id": "aggGold_bounceQLD_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.9618161523729059,
+      "sortino_median": 0.8722990086044011,
+      "sortino_std": 0.4828304710266407,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9558776847870787,
+      "sortino_median": 0.9796201341752753,
+      "sortino_std": 0.3547772238260777,
+      "combo_id": "aggQLD_bounceQLD_defenseQLD_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9532089912309208,
+      "sortino_median": 0.9892517411116356,
+      "sortino_std": 0.2903947648534196,
+      "combo_id": "aggGold_bounceQLD_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.9519973915638105,
+      "sortino_median": 1.0003188285831839,
+      "sortino_std": 0.34892852423015525,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9505839195225312,
+      "sortino_median": 0.9917681732601699,
+      "sortino_std": 0.32935776335802236,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9471853193572001,
+      "sortino_median": 0.9889277586312107,
+      "sortino_std": 0.4389044541369669,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9455480641946649,
+      "sortino_median": 0.965697423094213,
+      "sortino_std": 0.4239898978828781,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9440178984888881,
+      "sortino_median": 1.023665414572255,
+      "sortino_std": 0.43789139814858113,
+      "combo_id": "aggTQQQ_bounceGold_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.9434867161946019,
+      "sortino_median": 0.9990989136904459,
+      "sortino_std": 0.4449130499997016,
+      "combo_id": "aggTQQQ_bounceQLD_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9404382947224403,
+      "sortino_median": 0.9676749126864856,
+      "sortino_std": 0.3503482116405558,
+      "combo_id": "aggGold_bounceQLD_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.9377587299310933,
+      "sortino_median": 0.9931826305384608,
+      "sortino_std": 0.3873204743961557,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9315800397672062,
+      "sortino_median": 0.9696222850815928,
+      "sortino_std": 0.3165389423329119,
+      "combo_id": "aggGold_bounceQLD_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9300854532082558,
+      "sortino_median": 0.9418173990216223,
+      "sortino_std": 0.3483592830640575,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9287623038986619,
+      "sortino_median": 0.9504289270105917,
+      "sortino_std": 0.3283920477493105,
+      "combo_id": "aggTQQQ_bounceQLD_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9209752613048827,
+      "sortino_median": 0.9464226022877823,
+      "sortino_std": 0.39694734953473537,
+      "combo_id": "aggQLD_bounceQLD_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.9199112634390904,
+      "sortino_median": 0.9300607637412475,
+      "sortino_std": 0.40344987791123404,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.91685407990016,
+      "sortino_median": 0.9544464210851588,
+      "sortino_std": 0.35604641448504193,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.9159654169822855,
+      "sortino_median": 0.8370487243537501,
+      "sortino_std": 0.4838269499733023,
+      "combo_id": "aggQQQ_bounceQLD_defenseGold_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.913725740537342,
+      "sortino_median": 0.9420844371543704,
+      "sortino_std": 0.356914806764674,
+      "combo_id": "aggGold_bounceTQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.913623153736681,
+      "sortino_median": 0.957427770458941,
+      "sortino_std": 0.33721970560268316,
+      "combo_id": "aggTQQQ_bounceQLD_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.91061201589975,
+      "sortino_median": 0.9417813498473203,
+      "sortino_std": 0.33919235647345897,
+      "combo_id": "aggGold_bounceQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9103414433627831,
+      "sortino_median": 0.9458706534702381,
+      "sortino_std": 0.29944285506081925,
+      "combo_id": "aggGold_bounceQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.9071561871182752,
+      "sortino_median": 0.9600757405046829,
+      "sortino_std": 0.35757835405594746,
+      "combo_id": "aggQLD_bounceQLD_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9048900333078879,
+      "sortino_median": 0.9180412008667735,
+      "sortino_std": 0.31841821601403686,
+      "combo_id": "aggQLD_bounceTQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9011735633840441,
+      "sortino_median": 0.925032949458706,
+      "sortino_std": 0.3629396678469839,
+      "combo_id": "aggQLD_bounceQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.9010161458564605,
+      "sortino_median": 0.9305896782242637,
+      "sortino_std": 0.4013895672915162,
+      "combo_id": "aggQLD_bounceTQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.8931963534789047,
+      "sortino_median": 0.8760563435084765,
+      "sortino_std": 0.41279174380121686,
+      "combo_id": "aggTQQQ_bounceGold_defenseGold_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8907739356441674,
+      "sortino_median": 0.9093379543006311,
+      "sortino_std": 0.37142448437926384,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.888989964973441,
+      "sortino_median": 0.9193341634512695,
+      "sortino_std": 0.32005814702665153,
+      "combo_id": "aggQLD_bounceTQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8885461524347329,
+      "sortino_median": 0.897097214492798,
+      "sortino_std": 0.3131565427813677,
+      "combo_id": "aggGold_bounceGold_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8884513820630698,
+      "sortino_median": 0.9282394684527607,
+      "sortino_std": 0.32788077373494395,
+      "combo_id": "aggGold_bounceQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.887837169073631,
+      "sortino_median": 0.9095613302634096,
+      "sortino_std": 0.33576232309621373,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.887318851005829,
+      "sortino_median": 0.937006334783885,
+      "sortino_std": 0.39438790600041634,
+      "combo_id": "aggTQQQ_bounceGold_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.8838895725443174,
+      "sortino_median": 0.8954373883385063,
+      "sortino_std": 0.3555937770803922,
+      "combo_id": "aggQQQ_bounceQLD_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.8830029606988904,
+      "sortino_median": 0.9397252039467553,
+      "sortino_std": 0.4485851572273413,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8822032572752484,
+      "sortino_median": 0.9237278754927132,
+      "sortino_std": 0.36264312449231806,
+      "combo_id": "aggTQQQ_bounceQLD_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.8811546328453842,
+      "sortino_median": 0.8913815721519573,
+      "sortino_std": 0.4086900602033766,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8795982047136088,
+      "sortino_median": 0.9074730373667035,
+      "sortino_std": 0.36575543176346353,
+      "combo_id": "aggGold_bounceQLD_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8781320683303605,
+      "sortino_median": 0.8859080267527244,
+      "sortino_std": 0.33540879595146433,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8778668352531752,
+      "sortino_median": 0.9000573146082959,
+      "sortino_std": 0.36833852513648346,
+      "combo_id": "aggGold_bounceQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.8764728735660119,
+      "sortino_median": 0.91209087279884,
+      "sortino_std": 0.33798086260055815,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8722845114789567,
+      "sortino_median": 0.9166126732723411,
+      "sortino_std": 0.3456681527764878,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8677348048219043,
+      "sortino_median": 0.8791088198757493,
+      "sortino_std": 0.32562055400918705,
+      "combo_id": "aggQLD_bounceQLD_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8674978126734577,
+      "sortino_median": 0.8685022210521784,
+      "sortino_std": 0.34750489270152823,
+      "combo_id": "aggGold_bounceTQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.8646553145393705,
+      "sortino_median": 0.8672582757737082,
+      "sortino_std": 0.36870263916878965,
+      "combo_id": "aggGold_bounceTQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8560517577643086,
+      "sortino_median": 0.8966261242033488,
+      "sortino_std": 0.3416840678382248,
+      "combo_id": "aggQLD_bounceTQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.8559422930015417,
+      "sortino_median": 0.8893351239601159,
+      "sortino_std": 0.4102221427682459,
+      "combo_id": "aggQLD_bounceQLD_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.8548765848826421,
+      "sortino_median": 0.8868660903293849,
+      "sortino_std": 0.31530608427328544,
+      "combo_id": "aggGold_bounceGold_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.854602242078564,
+      "sortino_median": 0.8832584008319744,
+      "sortino_std": 0.40484029972337954,
+      "combo_id": "aggQLD_bounceQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8541134197581028,
+      "sortino_median": 0.902929335870738,
+      "sortino_std": 0.4445944973016963,
+      "combo_id": "aggQLD_bounceGold_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.8528912469556772,
+      "sortino_median": 0.907773029050325,
+      "sortino_std": 0.36780607550636446,
+      "combo_id": "aggQLD_bounceQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8512221969606144,
+      "sortino_median": 0.8834046996608986,
+      "sortino_std": 0.3291143569602223,
+      "combo_id": "aggQLD_bounceQLD_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8477673355426094,
+      "sortino_median": 0.8558001879107966,
+      "sortino_std": 0.3386013652364915,
+      "combo_id": "aggTQQQ_bounceQLD_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.8465632595451592,
+      "sortino_median": 0.8266209691357094,
+      "sortino_std": 0.46617151714242433,
+      "combo_id": "aggGold_bounceTQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8444944382083892,
+      "sortino_median": 0.8889392623390342,
+      "sortino_std": 0.3689073274448685,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.8444082240908415,
+      "sortino_median": 0.9064878779723957,
+      "sortino_std": 0.405267821912983,
+      "combo_id": "aggTQQQ_bounceGold_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8424509894606861,
+      "sortino_median": 0.8443557286971846,
+      "sortino_std": 0.32886091132540873,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.8418123571790075,
+      "sortino_median": 0.8589549815367615,
+      "sortino_std": 0.37411035266192977,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8415350828666192,
+      "sortino_median": 0.8672572351030141,
+      "sortino_std": 0.3737679161008615,
+      "combo_id": "aggGold_bounceQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.8390483379318646,
+      "sortino_median": 0.7663422262139735,
+      "sortino_std": 0.4839693340758652,
+      "combo_id": "aggQQQ_bounceQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8388328067307573,
+      "sortino_median": 0.8647698959591201,
+      "sortino_std": 0.3766801744708346,
+      "combo_id": "aggQQQ_bounceQLD_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8377934167462964,
+      "sortino_median": 0.8388859672057986,
+      "sortino_std": 0.35208077084180783,
+      "combo_id": "aggGold_bounceQLD_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.8373866167627729,
+      "sortino_median": 0.8502297639828473,
+      "sortino_std": 0.4129226451769813,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8351633125796486,
+      "sortino_median": 0.8087504165654541,
+      "sortino_std": 0.3807882061034648,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8322197356787118,
+      "sortino_median": 0.8173831555562894,
+      "sortino_std": 0.4498845647504431,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8300714965775351,
+      "sortino_median": 0.8730648083450328,
+      "sortino_std": 0.32314688238619044,
+      "combo_id": "aggGold_bounceGold_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.8295679203895373,
+      "sortino_median": 0.8707719592543512,
+      "sortino_std": 0.3494607726076653,
+      "combo_id": "aggQQQ_bounceQLD_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.8266903071404552,
+      "sortino_median": 0.8286687295613298,
+      "sortino_std": 0.37767854096818293,
+      "combo_id": "aggGold_bounceQLD_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8260631270032017,
+      "sortino_median": 0.8336780109332043,
+      "sortino_std": 0.334204704795196,
+      "combo_id": "aggQLD_bounceQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.8258048483130929,
+      "sortino_median": 0.8380177994106135,
+      "sortino_std": 0.36703601674976194,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8232172967067157,
+      "sortino_median": 0.843587560564733,
+      "sortino_std": 0.3260295168920507,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8218273812906758,
+      "sortino_median": 0.8299830326747378,
+      "sortino_std": 0.31637678338118674,
+      "combo_id": "aggQLD_bounceTQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8209828457819621,
+      "sortino_median": 0.8657430674401037,
+      "sortino_std": 0.34921848734928146,
+      "combo_id": "aggQLD_bounceQLD_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.820632388128987,
+      "sortino_median": 0.8568204401301898,
+      "sortino_std": 0.4486130988840853,
+      "combo_id": "aggTQQQ_bounceGold_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8196179277344712,
+      "sortino_median": 0.8452211612322484,
+      "sortino_std": 0.3562268869963157,
+      "combo_id": "aggTQQQ_bounceGold_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8152365692328861,
+      "sortino_median": 0.8228127286065143,
+      "sortino_std": 0.3413602031233359,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8103144595046284,
+      "sortino_median": 0.8578190650139941,
+      "sortino_std": 0.34848397274385,
+      "combo_id": "aggGold_bounceGold_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8092429757103103,
+      "sortino_median": 0.8459314542893568,
+      "sortino_std": 0.3388472707357178,
+      "combo_id": "aggQLD_bounceQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.8085520935790034,
+      "sortino_median": 0.7627108584211497,
+      "sortino_std": 0.41055225181787003,
+      "combo_id": "aggQLD_bounceGold_defenseGold_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8055771971063682,
+      "sortino_median": 0.8057968984994115,
+      "sortino_std": 0.3556753004496869,
+      "combo_id": "aggGold_bounceQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.804240447745445,
+      "sortino_median": 0.8585044488941038,
+      "sortino_std": 0.36398630028030154,
+      "combo_id": "aggTQQQ_bounceGold_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8033424406570895,
+      "sortino_median": 0.8082898809141885,
+      "sortino_std": 0.3386287231652512,
+      "combo_id": "aggQQQ_bounceQLD_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8027679516633431,
+      "sortino_median": 0.7795316633667062,
+      "sortino_std": 0.3820777693180741,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.8025784559598078,
+      "sortino_median": 0.833564374605849,
+      "sortino_std": 0.35080198506450694,
+      "combo_id": "aggGold_bounceGold_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.8019438040096758,
+      "sortino_median": 0.8180554908662794,
+      "sortino_std": 0.3800533111358612,
+      "combo_id": "aggQLD_bounceQLD_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.8000443528053749,
+      "sortino_median": 0.7854900609324112,
+      "sortino_std": 0.49842873766842966,
+      "combo_id": "aggGold_bounceQLD_defenseGold_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.7999462836957278,
+      "sortino_median": 0.8287885696268786,
+      "sortino_std": 0.39242085548357136,
+      "combo_id": "aggQLD_bounceGold_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7917564209598422,
+      "sortino_median": 0.7747526814521717,
+      "sortino_std": 0.4536410522525784,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.791326838935308,
+      "sortino_median": 0.7986851060856769,
+      "sortino_std": 0.32030487648598877,
+      "combo_id": "aggQLD_bounceQLD_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.7905778778144598,
+      "sortino_median": 0.8253306964709095,
+      "sortino_std": 0.41401206356715275,
+      "combo_id": "aggQLD_bounceQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7853391135337358,
+      "sortino_median": 0.818921412838691,
+      "sortino_std": 0.34168689125347057,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7840546444084281,
+      "sortino_median": 0.8385510798476901,
+      "sortino_std": 0.38153187063969757,
+      "combo_id": "aggTQQQ_bounceGold_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.7837598791226373,
+      "sortino_median": 0.8106034967366686,
+      "sortino_std": 0.3377726078011603,
+      "combo_id": "aggQQQ_bounceQLD_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7830610317277299,
+      "sortino_median": 0.8269842331521959,
+      "sortino_std": 0.356457147646749,
+      "combo_id": "aggQLD_bounceQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.7827877770877909,
+      "sortino_median": 0.7840498510746531,
+      "sortino_std": 0.38460693088804176,
+      "combo_id": "aggGold_bounceQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7775228375115548,
+      "sortino_median": 0.7517731657467157,
+      "sortino_std": 0.35566849656438054,
+      "combo_id": "aggGold_bounceTQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7773890686213786,
+      "sortino_median": 0.8112386937702682,
+      "sortino_std": 0.38526321500568766,
+      "combo_id": "aggGold_bounceGold_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.7727104345103218,
+      "sortino_median": 0.8191700047233703,
+      "sortino_std": 0.3632800445100824,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.7704670902126648,
+      "sortino_median": 0.7787955908744089,
+      "sortino_std": 0.4305433037260496,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.767585126870818,
+      "sortino_median": 0.7953335846347644,
+      "sortino_std": 0.38701067580712334,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.767455331691025,
+      "sortino_median": 0.7444203261554474,
+      "sortino_std": 0.38224351201094553,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7656028114584916,
+      "sortino_median": 0.7434205111050505,
+      "sortino_std": 0.34759505338969876,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.7653594256289015,
+      "sortino_median": 0.7759552887834438,
+      "sortino_std": 0.4720375563814036,
+      "combo_id": "aggQQQ_bounceGold_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7640897712326393,
+      "sortino_median": 0.7704591227668759,
+      "sortino_std": 0.34610890214127427,
+      "combo_id": "aggTQQQ_bounceGold_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.7636309137775614,
+      "sortino_median": 0.7824057420182137,
+      "sortino_std": 0.41983465964228794,
+      "combo_id": "aggTQQQ_bounceGold_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.7635546586741954,
+      "sortino_median": 0.7794527547961592,
+      "sortino_std": 0.3554735615535659,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.7592745072081932,
+      "sortino_median": 0.76410403169951,
+      "sortino_std": 0.3499847007151494,
+      "combo_id": "aggQQQ_bounceQQQ_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7588222989324864,
+      "sortino_median": 0.7650850693095783,
+      "sortino_std": 0.3238676658293118,
+      "combo_id": "aggQLD_bounceQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.7579396496970768,
+      "sortino_median": 0.7526931478564062,
+      "sortino_std": 0.3929671342836341,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.7573624242655236,
+      "sortino_median": 0.7730979834721291,
+      "sortino_std": 0.385232460152389,
+      "combo_id": "aggQLD_bounceQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.7559363562074899,
+      "sortino_median": 0.7671518803689841,
+      "sortino_std": 0.35779468025136235,
+      "combo_id": "aggQLD_bounceGold_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.7551756852726944,
+      "sortino_median": 0.8227300888593532,
+      "sortino_std": 0.3908382740393962,
+      "combo_id": "aggQLD_bounceGold_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.753361128338036,
+      "sortino_median": 0.7554773006048794,
+      "sortino_std": 0.30862316041222393,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7531674589072144,
+      "sortino_median": 0.7523133346031657,
+      "sortino_std": 0.35836217201223314,
+      "combo_id": "aggGold_bounceGold_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.7526615034754679,
+      "sortino_median": 0.8057694957699206,
+      "sortino_std": 0.434450322548285,
+      "combo_id": "aggTQQQ_bounceGold_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7495556928193986,
+      "sortino_median": 0.7836675515175842,
+      "sortino_std": 0.3511596085794259,
+      "combo_id": "aggQQQ_bounceQLD_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7456503495483553,
+      "sortino_median": 0.7179320950143094,
+      "sortino_std": 0.3590232898521759,
+      "combo_id": "aggGold_bounceQLD_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7450701067203028,
+      "sortino_median": 0.7271333923646253,
+      "sortino_std": 0.4552737506627139,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.742856947450811,
+      "sortino_median": 0.7104209342765029,
+      "sortino_std": 0.405756398770907,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.7397904225458191,
+      "sortino_median": 0.770394476705942,
+      "sortino_std": 0.35035376449472755,
+      "combo_id": "aggQQQ_bounceQQQ_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.7394977356397191,
+      "sortino_median": 0.7866123198782458,
+      "sortino_std": 0.3602178419172974,
+      "combo_id": "aggQLD_bounceGold_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7327278066406534,
+      "sortino_median": 0.7123087570118468,
+      "sortino_std": 0.349319542454196,
+      "combo_id": "aggQLD_bounceQLD_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.7299453596606608,
+      "sortino_median": 0.7347689588708726,
+      "sortino_std": 0.4316104987101669,
+      "combo_id": "aggTQQQ_bounceQLD_defenseGold_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7257497972183693,
+      "sortino_median": 0.6875182632859983,
+      "sortino_std": 0.41382382701091625,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.722847433602782,
+      "sortino_median": 0.7002591542711901,
+      "sortino_std": 0.5242188794695796,
+      "combo_id": "aggGold_bounceQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.7228415909761706,
+      "sortino_median": 0.7398352924394401,
+      "sortino_std": 0.3634031232257865,
+      "combo_id": "aggQQQ_bounceQLD_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7227729150247147,
+      "sortino_median": 0.7230352436047431,
+      "sortino_std": 0.31406105394303563,
+      "combo_id": "aggQQQ_bounceQLD_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7217468663893027,
+      "sortino_median": 0.7775066240081805,
+      "sortino_std": 0.3711571737976656,
+      "combo_id": "aggQLD_bounceGold_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.7209043984496624,
+      "sortino_median": 0.7286837294770725,
+      "sortino_std": 0.3519568677129732,
+      "combo_id": "aggGold_bounceGold_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7186932230979407,
+      "sortino_median": 0.6912119003831659,
+      "sortino_std": 0.36857380334445494,
+      "combo_id": "aggGold_bounceTQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.7154238802859002,
+      "sortino_median": 0.7594057246336683,
+      "sortino_std": 0.4181211277874448,
+      "combo_id": "aggQLD_bounceGold_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.7142408990842862,
+      "sortino_median": 0.7247800824954214,
+      "sortino_std": 0.40562664010186344,
+      "combo_id": "aggQQQ_bounceGold_defenseQLD_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.7109902551172195,
+      "sortino_median": 0.7469811993521782,
+      "sortino_std": 0.36023606858895735,
+      "combo_id": "aggQQQ_bounceQQQ_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7106501626195497,
+      "sortino_median": 0.6816659927393337,
+      "sortino_std": 0.360674608034116,
+      "combo_id": "aggGold_bounceQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7097712862122731,
+      "sortino_median": 0.6850035679654456,
+      "sortino_std": 0.38024632872412045,
+      "combo_id": "aggTQQQ_bounceGold_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.7072694093600449,
+      "sortino_median": 0.713928778784771,
+      "sortino_std": 0.3300890401177353,
+      "combo_id": "aggQLD_bounceGold_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.7047067672051089,
+      "sortino_median": 0.7050302134914961,
+      "sortino_std": 0.3869101805757706,
+      "combo_id": "aggGold_bounceGold_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.7020824951509325,
+      "sortino_median": 0.6993659020446779,
+      "sortino_std": 0.3948813529441565,
+      "combo_id": "aggQQQ_bounceQLD_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.700292069546351,
+      "sortino_median": 0.6677400715253825,
+      "sortino_std": 0.4088055703733498,
+      "combo_id": "aggQLD_bounceQLD_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6971624126131283,
+      "sortino_median": 0.6756837903048473,
+      "sortino_std": 0.35011736393793697,
+      "combo_id": "aggQLD_bounceQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6950364580359761,
+      "sortino_median": 0.6788803446783678,
+      "sortino_std": 0.32353500101249283,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6930016252022521,
+      "sortino_median": 0.65230642142795,
+      "sortino_std": 0.41360990513773943,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6903105866398195,
+      "sortino_median": 0.6886137537292387,
+      "sortino_std": 0.31908042395426,
+      "combo_id": "aggQQQ_bounceQQQ_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.6829877314512022,
+      "sortino_median": 0.6847188303966751,
+      "sortino_std": 0.43006967197881496,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.6824169229288797,
+      "sortino_median": 0.6818901926504924,
+      "sortino_std": 0.37963435576311205,
+      "combo_id": "aggQQQ_bounceGold_defenseTQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.6816571470600602,
+      "sortino_median": 0.7045008430861933,
+      "sortino_std": 0.3944899714531821,
+      "combo_id": "aggQLD_bounceGold_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.6809257030955832,
+      "sortino_median": 0.6834792922464619,
+      "sortino_std": 0.3806917354356347,
+      "combo_id": "aggQLD_bounceTQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6776527830879164,
+      "sortino_median": 0.6769817790509929,
+      "sortino_std": 0.4045065227566743,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.6776439289998386,
+      "sortino_median": 0.6951087308274596,
+      "sortino_std": 0.370675557918926,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.6774846701568964,
+      "sortino_median": 0.6444895210589372,
+      "sortino_std": 0.37654118977254963,
+      "combo_id": "aggGold_bounceQLD_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.6667900907610755,
+      "sortino_median": 0.732015192240781,
+      "sortino_std": 0.3932700185693716,
+      "combo_id": "aggQQQ_bounceGold_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.6666702774911878,
+      "sortino_median": 0.6551006188713262,
+      "sortino_std": 0.393086565653655,
+      "combo_id": "aggGold_bounceTQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.6641624402735317,
+      "sortino_median": 0.703068416273094,
+      "sortino_std": 0.3770374907802813,
+      "combo_id": "aggQQQ_bounceGold_defenseTQQQ_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.663217222625775,
+      "sortino_median": 0.6267968501532273,
+      "sortino_std": 0.3729103034143963,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6619992336676037,
+      "sortino_median": 0.6477158275873218,
+      "sortino_std": 0.3266367774814174,
+      "combo_id": "aggQQQ_bounceQLD_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.6607666196821098,
+      "sortino_median": 0.6365545231494099,
+      "sortino_std": 0.4507216530577307,
+      "combo_id": "aggTQQQ_bounceGold_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.657188650929267,
+      "sortino_median": 0.6141096156324809,
+      "sortino_std": 0.4117089372936963,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.651691606327891,
+      "sortino_median": 0.6166850006217127,
+      "sortino_std": 0.4101557561025232,
+      "combo_id": "aggQLD_bounceQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6516004391416871,
+      "sortino_median": 0.6221691838679787,
+      "sortino_std": 0.3555560071249903,
+      "combo_id": "aggGold_bounceGold_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.6479638504397103,
+      "sortino_median": 0.5497761949114304,
+      "sortino_std": 0.5061330027738472,
+      "combo_id": "aggQQQ_bounceGold_defenseGold_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6471903907944706,
+      "sortino_median": 0.6083728163378437,
+      "sortino_std": 0.36730579224083715,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.6469298089008058,
+      "sortino_median": 0.6983018549353868,
+      "sortino_std": 0.3774401915696032,
+      "combo_id": "aggQQQ_bounceGold_defenseTQQQ_safeQLD"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.6466605938515001,
+      "sortino_median": 0.6706673219603905,
+      "sortino_std": 0.3958638681584241,
+      "combo_id": "aggQLD_bounceGold_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6446078248778286,
+      "sortino_median": 0.6415782405285216,
+      "sortino_std": 0.4023664118837077,
+      "combo_id": "aggTQQQ_bounceQLD_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6385834413089189,
+      "sortino_median": 0.6208919727086981,
+      "sortino_std": 0.3492815263117575,
+      "combo_id": "aggQLD_bounceGold_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.6383113169396797,
+      "sortino_median": 0.634028375444586,
+      "sortino_std": 0.3813275355082042,
+      "combo_id": "aggQLD_bounceQLD_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6375840333276457,
+      "sortino_median": 0.6429484931143286,
+      "sortino_std": 0.3267912294731656,
+      "combo_id": "aggQQQ_bounceGold_defenseTQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.6292127888693249,
+      "sortino_median": 0.5934902942774984,
+      "sortino_std": 0.38163635374290616,
+      "combo_id": "aggGold_bounceQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.6271502339071232,
+      "sortino_median": 0.6244216640961056,
+      "sortino_std": 0.39598128046085984,
+      "combo_id": "aggQQQ_bounceQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6265043179467892,
+      "sortino_median": 0.6102922220140061,
+      "sortino_std": 0.32893277759677764,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6201469157566465,
+      "sortino_median": 0.5943079579940542,
+      "sortino_std": 0.346276010827513,
+      "combo_id": "aggGold_bounceTQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.6189688432299973,
+      "sortino_median": 0.5871197632126652,
+      "sortino_std": 0.3766564769068952,
+      "combo_id": "aggQQQ_bounceQLD_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.6140254717484815,
+      "sortino_median": 0.6694469960274316,
+      "sortino_std": 0.40761444043002204,
+      "combo_id": "aggQQQ_bounceGold_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6134894963043523,
+      "sortino_median": 0.5712677826441663,
+      "sortino_std": 0.3666856489242428,
+      "combo_id": "aggQLD_bounceQLD_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.6112071202097754,
+      "sortino_median": 0.5916988001353378,
+      "sortino_std": 0.42053687558782343,
+      "combo_id": "aggGold_bounceQLD_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.6084838187332248,
+      "sortino_median": 0.6022489768106163,
+      "sortino_std": 0.39851253426255956,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5999292419040361,
+      "sortino_median": 0.6012194996953899,
+      "sortino_std": 0.35774727501641396,
+      "combo_id": "aggQLD_bounceTQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.5992080926864357,
+      "sortino_median": 0.6310785933583842,
+      "sortino_std": 0.382323836735531,
+      "combo_id": "aggQQQ_bounceGold_defenseQLD_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.597684844209138,
+      "sortino_median": 0.5946534128150868,
+      "sortino_std": 0.4172375457082227,
+      "combo_id": "aggTQQQ_bounceGold_defenseGold_safeQLD"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5958172962447749,
+      "sortino_median": 0.552848466774362,
+      "sortino_std": 0.4017752317560022,
+      "combo_id": "aggTQQQ_bounceGold_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.5893368790639936,
+      "sortino_median": 0.5819688202188069,
+      "sortino_std": 0.3794316447876729,
+      "combo_id": "aggQLD_bounceQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.586920888532563,
+      "sortino_median": 0.5578290112421735,
+      "sortino_std": 0.3478766526849344,
+      "combo_id": "aggGold_bounceQLD_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5805250893462858,
+      "sortino_median": 0.5371895583495995,
+      "sortino_std": 0.3339325670198922,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5769483790684273,
+      "sortino_median": 0.5324633066007293,
+      "sortino_std": 0.364668458390558,
+      "combo_id": "aggQLD_bounceQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.5690153274383082,
+      "sortino_median": 0.5392457722252563,
+      "sortino_std": 0.37922902432644195,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5669639045776533,
+      "sortino_median": 0.5506200273260511,
+      "sortino_std": 0.32939290046302894,
+      "combo_id": "aggQQQ_bounceGold_defenseQLD_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5659254361698237,
+      "sortino_median": 0.5632183060593725,
+      "sortino_std": 0.3552863113947154,
+      "combo_id": "aggQLD_bounceQLD_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.563328626652921,
+      "sortino_median": 0.5241420011512702,
+      "sortino_std": 0.4053918502552284,
+      "combo_id": "aggQLD_bounceGold_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.5565560630496237,
+      "sortino_median": 0.5393925377793107,
+      "sortino_std": 0.3418958756442253,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5505959564647497,
+      "sortino_median": 0.5181785545102053,
+      "sortino_std": 0.3475439393260963,
+      "combo_id": "aggGold_bounceQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5464328683362525,
+      "sortino_median": 0.5320505553369759,
+      "sortino_std": 0.384237888168575,
+      "combo_id": "aggTQQQ_bounceGold_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5462224585751101,
+      "sortino_median": 0.500910404534364,
+      "sortino_std": 0.3338752848516422,
+      "combo_id": "aggQQQ_bounceQLD_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.5373649467166938,
+      "sortino_median": 0.4983608303866139,
+      "sortino_std": 0.3664413907733212,
+      "combo_id": "aggGold_bounceGold_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.5362288099657045,
+      "sortino_median": 0.5132718480936638,
+      "sortino_std": 0.44023800491753873,
+      "combo_id": "aggGold_bounceQQQ_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5290224236180652,
+      "sortino_median": 0.5231368620853147,
+      "sortino_std": 0.35125156662347495,
+      "combo_id": "aggQLD_bounceQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.5254190755635021,
+      "sortino_median": 0.48406811255170346,
+      "sortino_std": 0.5371189256164351,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5139308247809008,
+      "sortino_median": 0.46812105168726303,
+      "sortino_std": 0.3543349956653829,
+      "combo_id": "aggQLD_bounceGold_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.5101048015815023,
+      "sortino_median": 0.4896698815507263,
+      "sortino_std": 0.34000536443225576,
+      "combo_id": "aggQQQ_bounceQLD_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.509339746131054,
+      "sortino_median": 0.46190663415234423,
+      "sortino_std": 0.33271492015635695,
+      "combo_id": "aggQQQ_bounceQQQ_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5004839097495579,
+      "sortino_median": 0.4948914798636327,
+      "sortino_std": 0.3098503593057701,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.49995702519327634,
+      "sortino_median": 0.4860415915714016,
+      "sortino_std": 0.36448924308233466,
+      "combo_id": "aggQLD_bounceGold_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.4990105650765717,
+      "sortino_median": 0.4887224380149497,
+      "sortino_std": 0.3165712073545558,
+      "combo_id": "aggGold_bounceTQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.4866928140479177,
+      "sortino_median": 0.44639856994563065,
+      "sortino_std": 0.33238707023581354,
+      "combo_id": "aggGold_bounceGold_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.4772846592613909,
+      "sortino_median": 0.45842904380472127,
+      "sortino_std": 0.37572534566773436,
+      "combo_id": "aggQQQ_bounceGold_defenseQQQ_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.4696676355735032,
+      "sortino_median": 0.4536411431081605,
+      "sortino_std": 0.3986472203707165,
+      "combo_id": "aggQQQ_bounceGold_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.4653575841968096,
+      "sortino_median": 0.45557511842620846,
+      "sortino_std": 0.3357167615314669,
+      "combo_id": "aggQLD_bounceGold_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.4650344531391206,
+      "sortino_median": 0.4538357215888444,
+      "sortino_std": 0.3059140318313433,
+      "combo_id": "aggQQQ_bounceQLD_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.46057272242103187,
+      "sortino_median": 0.4595033568903356,
+      "sortino_std": 0.2973831632524441,
+      "combo_id": "aggGold_bounceTQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.4585176029738459,
+      "sortino_median": 0.43535758741313124,
+      "sortino_std": 0.33704250078736414,
+      "combo_id": "aggQQQ_bounceQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.4522044478555704,
+      "sortino_median": 0.43504170398926945,
+      "sortino_std": 0.32463953918023025,
+      "combo_id": "aggGold_bounceQLD_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.445174200647875,
+      "sortino_median": 0.3963519897355563,
+      "sortino_std": 0.3229505834751564,
+      "combo_id": "aggQQQ_bounceGold_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.42731039811301025,
+      "sortino_median": 0.41218973557560457,
+      "sortino_std": 0.3012242761736834,
+      "combo_id": "aggQQQ_bounceQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.42483875356011064,
+      "sortino_median": 0.41965256586868005,
+      "sortino_std": 0.2987686136694069,
+      "combo_id": "aggGold_bounceQLD_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.40017826052828387,
+      "sortino_median": 0.37406579373376636,
+      "sortino_std": 0.33043375760800353,
+      "combo_id": "aggGold_bounceQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.3868135718110898,
+      "sortino_median": 0.37680189159956523,
+      "sortino_std": 0.2989748777661925,
+      "combo_id": "aggGold_bounceQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.3752062921745507,
+      "sortino_median": 0.3493989356982791,
+      "sortino_std": 0.4354515619705122,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.3658243713806293,
+      "sortino_median": 0.33280532057854084,
+      "sortino_std": 0.3306129603684045,
+      "combo_id": "aggQQQ_bounceGold_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.36234619540608615,
+      "sortino_median": 0.3358336156783531,
+      "sortino_std": 0.2895742468709494,
+      "combo_id": "aggQQQ_bounceGold_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.3211468357831876,
+      "sortino_median": 0.2968474941428063,
+      "sortino_std": 0.28879637169712924,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.3063140366192734,
+      "sortino_median": 0.27522142868738486,
+      "sortino_std": 0.32552491474588896,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeQLD"
+    }
+  ],
+  "top20_by_sortino_mean": [
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1868194606160416,
+      "sortino_median": 1.2569763958927198,
+      "sortino_std": 0.4078446781954902,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1621426484899025,
+      "sortino_median": 1.2045900823350428,
+      "sortino_std": 0.3014551112404674,
+      "combo_id": "aggGold_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1471914204787943,
+      "sortino_median": 1.2229658888875177,
+      "sortino_std": 0.407724787376617,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.136880338118569,
+      "sortino_median": 1.1350128728808593,
+      "sortino_std": 0.4115535985254677,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.135212090258374,
+      "sortino_median": 1.1724395467017794,
+      "sortino_std": 0.2951138796391101,
+      "combo_id": "aggGold_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1232339117810926,
+      "sortino_median": 1.1689614629757004,
+      "sortino_std": 0.4103666023752499,
+      "combo_id": "aggQLD_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.1021226264056303,
+      "sortino_median": 1.1050273132043555,
+      "sortino_std": 0.41533098840511146,
+      "combo_id": "aggTQQQ_bounceQLD_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0845685253438209,
+      "sortino_median": 1.159733078393773,
+      "sortino_std": 0.4124081812797293,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0806174744876262,
+      "sortino_median": 1.1258801244580963,
+      "sortino_std": 0.4075712947382082,
+      "combo_id": "aggQLD_bounceQLD_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.077775583760526,
+      "sortino_median": 1.0556736176414399,
+      "sortino_std": 0.40767575338937745,
+      "combo_id": "aggQLD_bounceTQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0774385893763878,
+      "sortino_median": 1.1175147981580986,
+      "sortino_std": 0.3601215520468402,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0741155633612538,
+      "sortino_median": 1.097427714046761,
+      "sortino_std": 0.29693134194261905,
+      "combo_id": "aggGold_bounceQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0658643308414215,
+      "sortino_median": 1.0848444833606774,
+      "sortino_std": 0.42247748542847613,
+      "combo_id": "aggQQQ_bounceTQQQ_defenseQQQ_safeGold"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0586877454895873,
+      "sortino_median": 1.0956266403714419,
+      "sortino_std": 0.28336283511963145,
+      "combo_id": "aggGold_bounceTQQQ_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 1.0528831972795176,
+      "sortino_median": 1.0963374462766695,
+      "sortino_std": 0.4231221188852217,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQQQ_safeQQQ"
+    },
+    {
+      "agg": "QLD",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.0423723452716323,
+      "sortino_median": 1.0257138169946678,
+      "sortino_std": 0.4121041521536846,
+      "combo_id": "aggQLD_bounceQLD_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.041455941375026,
+      "sortino_median": 1.0454089251572292,
+      "sortino_std": 0.41691575019244703,
+      "combo_id": "aggTQQQ_bounceQQQ_defenseGold_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0358527491142044,
+      "sortino_median": 1.0769474011551834,
+      "sortino_std": 0.3640501526098344,
+      "combo_id": "aggTQQQ_bounceQLD_defenseQLD_safeGold"
+    },
+    {
+      "agg": "TQQQ",
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 1.03275925161283,
+      "sortino_median": 1.0867245464402364,
+      "sortino_std": 0.37107374224519346,
+      "combo_id": "aggTQQQ_bounceTQQQ_defenseQLD_safeQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0225943330273513,
+      "sortino_median": 1.0527579919659946,
+      "sortino_std": 0.2881503257152527,
+      "combo_id": "aggGold_bounceQLD_defenseQLD_safeGold"
+    }
+  ],
+  "bottom10_by_sortino_mean": [
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.445174200647875,
+      "sortino_median": 0.3963519897355563,
+      "sortino_std": 0.3229505834751564,
+      "combo_id": "aggQQQ_bounceGold_defenseQQQ_safeTQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.42731039811301025,
+      "sortino_median": 0.41218973557560457,
+      "sortino_std": 0.3012242761736834,
+      "combo_id": "aggQQQ_bounceQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.42483875356011064,
+      "sortino_median": 0.41965256586868005,
+      "sortino_std": 0.2987686136694069,
+      "combo_id": "aggGold_bounceQLD_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.40017826052828387,
+      "sortino_median": 0.37406579373376636,
+      "sortino_std": 0.33043375760800353,
+      "combo_id": "aggGold_bounceQQQ_defenseGold_safeQLD"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.3868135718110898,
+      "sortino_median": 0.37680189159956523,
+      "sortino_std": 0.2989748777661925,
+      "combo_id": "aggGold_bounceQQQ_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.3752062921745507,
+      "sortino_median": 0.3493989356982791,
+      "sortino_std": 0.4354515619705122,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeQQQ"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.3658243713806293,
+      "sortino_median": 0.33280532057854084,
+      "sortino_std": 0.3306129603684045,
+      "combo_id": "aggQQQ_bounceGold_defenseGold_safeQLD"
+    },
+    {
+      "agg": "QQQ",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.36234619540608615,
+      "sortino_median": 0.3358336156783531,
+      "sortino_std": 0.2895742468709494,
+      "combo_id": "aggQQQ_bounceGold_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.3211468357831876,
+      "sortino_median": 0.2968474941428063,
+      "sortino_std": 0.28879637169712924,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeTQQQ"
+    },
+    {
+      "agg": "Gold",
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.3063140366192734,
+      "sortino_median": 0.27522142868738486,
+      "sortino_std": 0.32552491474588896,
+      "combo_id": "aggGold_bounceGold_defenseGold_safeQLD"
+    }
+  ]
+}

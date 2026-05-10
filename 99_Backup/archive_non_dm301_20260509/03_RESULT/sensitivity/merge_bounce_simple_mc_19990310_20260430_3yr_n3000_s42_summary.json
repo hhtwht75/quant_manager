@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "strategy": "merge_bounce_simple_mc (DMABS MA5>M120, bounce-trail only)",
+    "sig": "QQQ",
+    "gold": "GC=F (COMEX) from 2000-08-30; preceding dates use ^XAU anchored to first GC=F close (approx. pre-contract Yahoo window — not TradingView GC1!)",
+    "index_days": 6809,
+    "trail": 0.85,
+    "mc_years": 3.0,
+    "mc_min_days": 756,
+    "mc_iters": 3000,
+    "mc_seed": 42
+  },
+  "top_by_sortino_mean": [
+    {
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.1872321854055325,
+      "sortino_median": 1.2569763958927185,
+      "sortino_std": 0.40695586719696086
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.135227243303549,
+      "sortino_median": 1.1326339618761256,
+      "sortino_std": 0.4122273094382333
+    },
+    {
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 1.0814036675973002,
+      "sortino_median": 1.1258801244580954,
+      "sortino_std": 0.40634135295114565
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 1.0783240796790572,
+      "sortino_median": 1.1175147981580982,
+      "sortino_std": 0.3587272738650454
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 1.0526211887346868,
+      "sortino_median": 1.094905819134378,
+      "sortino_std": 0.4232144514937424
+    },
+    {
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 1.0408473380456957,
+      "sortino_median": 1.024143527106119,
+      "sortino_std": 0.4123792393132432
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 1.0330563946006273,
+      "sortino_median": 1.0867245464402389,
+      "sortino_std": 0.370602678042283
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.9834513533943309,
+      "sortino_median": 1.0379358909375394,
+      "sortino_std": 0.43676477922044593
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9660898358901274,
+      "sortino_median": 0.9868726063570981,
+      "sortino_std": 0.3208701609799656
+    },
+    {
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.9569712824940746,
+      "sortino_median": 0.9796201341752759,
+      "sortino_std": 0.35323660355074626
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9511914464500096,
+      "sortino_median": 0.9917681732601704,
+      "sortino_std": 0.32855297418475043
+    },
+    {
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.9466569395112238,
+      "sortino_median": 0.965697423094211,
+      "sortino_std": 0.4224913208604442
+    },
+    {
+      "bounce": "QLD",
+      "defense": "QQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.9209008635445783,
+      "sortino_median": 0.9461096679047796,
+      "sortino_std": 0.39694726666326485
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "QLD",
+      "sortino_mean": 0.9198752254863707,
+      "sortino_median": 0.9296546711433493,
+      "sortino_std": 0.4034551510313665
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.9171168306462207,
+      "sortino_median": 0.9544464210851584,
+      "sortino_std": 0.35572952787616835
+    },
+    {
+      "bounce": "QLD",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.9075835091845872,
+      "sortino_median": 0.9600757405046818,
+      "sortino_std": 0.35704200938158775
+    },
+    {
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8896681751795199,
+      "sortino_median": 0.897097214492801,
+      "sortino_std": 0.3116672479429333
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "TQQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8781320683303605,
+      "sortino_median": 0.8859080267527244,
+      "sortino_std": 0.33540879595146433
+    },
+    {
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.8688708752866955,
+      "sortino_median": 0.8791088198757497,
+      "sortino_std": 0.32412115123443563
+    },
+    {
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.8561630767766628,
+      "sortino_median": 0.8868660903293852,
+      "sortino_std": 0.31342469664036476
+    },
+    {
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.8539086061239882,
+      "sortino_median": 0.887958222690665,
+      "sortino_std": 0.409879341111006
+    },
+    {
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8518882218056215,
+      "sortino_median": 0.8834933072335163,
+      "sortino_std": 0.3283087086856001
+    },
+    {
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.8357624560891977,
+      "sortino_median": 0.7610810517112148,
+      "sortino_std": 0.48459626301222514
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "QLD",
+      "safe": "TQQQ",
+      "sortino_mean": 0.8349224053836084,
+      "sortino_median": 0.8087504165654542,
+      "sortino_std": 0.38096533975363267
+    },
+    {
+      "bounce": "TQQQ",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8318259342213045,
+      "sortino_median": 0.816167278162224,
+      "sortino_std": 0.45015629501802135
+    },
+    {
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "Gold",
+      "sortino_mean": 0.831344285512843,
+      "sortino_median": 0.8730648083450339,
+      "sortino_std": 0.3212323571460088
+    },
+    {
+      "bounce": "QQQ",
+      "defense": "QLD",
+      "safe": "Gold",
+      "sortino_mean": 0.827558218320618,
+      "sortino_median": 0.8383117903918554,
+      "sortino_std": 0.36475319426042024
+    },
+    {
+      "bounce": "QLD",
+      "defense": "TQQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.8212634403839659,
+      "sortino_median": 0.8657430674401045,
+      "sortino_std": 0.3489118567623306
+    },
+    {
+      "bounce": "Gold",
+      "defense": "TQQQ",
+      "safe": "QQQ",
+      "sortino_mean": 0.8110366961945615,
+      "sortino_median": 0.8578190650139943,
+      "sortino_std": 0.34754699726757626
+    },
+    {
+      "bounce": "Gold",
+      "defense": "QLD",
+      "safe": "QQQ",
+      "sortino_mean": 0.8030703620603665,
+      "sortino_median": 0.8336684113583421,
+      "sortino_std": 0.350243478125512
+    }
+  ],
+  "bottom_by_sortino_mean": [
+    {
+      "bounce": "QLD",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.5645692189804272,
+      "sortino_median": 0.56249262281587,
+      "sortino_std": 0.3549573925412684
+    },
+    {
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "QLD",
+      "sortino_mean": 0.5370044465863754,
+      "sortino_median": 0.4979443277438065,
+      "sortino_std": 0.3666197944333447
+    },
+    {
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "Gold",
+      "sortino_mean": 0.5254190755635021,
+      "sortino_median": 0.48406811255170346,
+      "sortino_std": 0.5371189256164351
+    },
+    {
+      "bounce": "QQQ",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.508836922363108,
+      "sortino_median": 0.4615671741659899,
+      "sortino_std": 0.33291889923756324
+    },
+    {
+      "bounce": "Gold",
+      "defense": "QQQ",
+      "safe": "TQQQ",
+      "sortino_mean": 0.48620153916774816,
+      "sortino_median": 0.44609273706153285,
+      "sortino_std": 0.3325079904267464
+    },
+    {
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.45610144697331617,
+      "sortino_median": 0.433681107694883,
+      "sortino_std": 0.33657536497632234
+    },
+    {
+      "bounce": "QQQ",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.42536708932186795,
+      "sortino_median": 0.4095039436961304,
+      "sortino_std": 0.3005852027396103
+    },
+    {
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QQQ",
+      "sortino_mean": 0.37430347272700376,
+      "sortino_median": 0.34939893569827896,
+      "sortino_std": 0.434711539584849
+    },
+    {
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "TQQQ",
+      "sortino_mean": 0.32030433464878677,
+      "sortino_median": 0.29651877024638107,
+      "sortino_std": 0.28815013802079076
+    },
+    {
+      "bounce": "Gold",
+      "defense": "Gold",
+      "safe": "QLD",
+      "sortino_mean": 0.305447535714586,
+      "sortino_median": 0.2740258316658618,
+      "sortino_std": 0.3248862266639483
+    }
+  ]
+}

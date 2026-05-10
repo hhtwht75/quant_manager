@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "sig_asset": "QQQ",
+    "def_scenarios_run": [
+      "QQQ",
+      "GC=F (COMEX Gold Continuous Contract)"
+    ],
+    "nor_asset": "QLD",
+    "agg_asset": "TQQQ",
+    "common_trading_days": 5918,
+    "first_date": "2002-10-01",
+    "last_date": "2026-04-30",
+    "--root_gate": "2002-10-01",
+    "trail_stop": 0.85,
+    "initial_capital": 100000.0,
+    "ma200_cache": "/Users/vincent/Library/CloudStorage/Dropbox/Do_Money/quant_manager/02_DATA/cache/ma200/QQQ_200_ce592c835bfc2ba1_ma.csv",
+    "gold_price_source_note": "GC=F (COMEX Gold Continuous Contract)"
+  },
+  "strategy_def_qqq_metrics": {
+    "cagr": 0.2738892976490124,
+    "mdd": -0.6508638267081746,
+    "sharpe": 0.7454046898842163,
+    "sortino": 0.9971702563635796,
+    "ulcer": 19.868814804791675,
+    "total_return": 300.1854338882564
+  },
+  "strategy_def_gold_metrics": {
+    "cagr": 0.23618253727414062,
+    "mdd": -0.5742926284572629,
+    "sharpe": 0.6774089030087355,
+    "sortino": 0.8827924066001207,
+    "ulcer": 20.641738976223632,
+    "total_return": 147.30568704186288
+  },
+  "delta_defGold_minus_defQQQ": {
+    "cagr": -0.03770676037487175,
+    "mdd": 0.07657119825091163,
+    "sharpe": -0.0679957868754808,
+    "sortino": -0.11437784976345888,
+    "ulcer": 0.7729241714319564,
+    "total_return": -152.87974684639352
+  }
+}
